@@ -1,177 +1,212 @@
 <template>
-    <div>    
-        <div id="top__menu">
-            <div id="top__menu-brand"><img src="./brand.jpg" alt="Brand" /></div>
-            <div id="top__menu__company">
-                <div class="top__menu__company-info">
-                    <div class="top__menu__company-title">Prosto z natury Sp. z o.o. </div>
-                    <ul class="top__menu__company-address">
-                        <li>ul. Lipowa 1/1</li>
-                        <li>11-100 Lidzbark Warmiński</li>
-                    </ul>
-                </div>
-                <div class="top__menu__company-social">
-                    <div>Zadzwoń do nas!</div>
-                    <div>Facebook</div>
-                </div>
-                <div class="top__menu__company-user">
-                    <div>Zaloguj/Zarejestruj</div>
-                    <div>Koszyk: Pusty</div>
-                </div>
-            </div>
+  <div>
+    <div id="top__menu">
+      <div id="top__menu-brand">
+        <img src="../assets/images/brand.jpg" alt="/Brand" />
+      </div>
+      <div id="top__menu__company">
+        <div class="top__menu__company-info">
+          <div class="top__menu__company-title">Prosto z natury Sp. z o.o.</div>
+          <ul class="top__menu__company-address">
+            <li>ul. Lipowa 1/1, 11-100 Lidzbark Warmiński</li>            
+          </ul>
+        <ul class="top__menu__company-phone">
+            <li>tel: +48 89 378 22 41</li>
+            <li>tel. +47 607 909 909</li>
+            <li>poczta@prostoznatury.pl</li>
+        </ul>
         </div>
-        <div id="bottom__menu">
-            <ul id="bottom__menu-list">
-                <li>Home</li>
-                <li>O nas</li>
-                <li>Sklep</li>
-                <li>Wysyłka</li>
-                <li>Kontakt</li>
-            </ul>
+        <div class="top__menu__company-social">
+          <div><img class="icon-social-media" src="../assets/icons/phone.png" alt="Telefon" /></div>
+          <div><img class="icon-social-media" src="../assets/icons/facebook.png" alt="Facebook" /></div>
+          <div><img class="icon-social-media" src="../assets/icons/instagram.png" alt="Instagram" /></div>
         </div>
+        <div class="top__menu__company-user">
+          <div>Zaloguj/Zarejestruj</div>
+          <div class="basket-user">Koszyk<div class="basket-lenght">0</div></div>
+        </div>
+      </div>
     </div>
+    <div id="bottom__menu">
+      <ul id="bottom__menu-list">
+        <li>Home</li>
+        <li>O nas</li>
+        <li>Sklep</li>
+        <li>Wysyłka</li>
+        <li>Kontakt</li>
+      </ul>
+    </div>
+  </div>
 </template>
 <style lang="scss">
 #top__menu {
-    display: flex;
-    flex-direction: column;
-    min-height: 140px;
-    height: auto;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 140px;
+  height: auto;
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-    #top__menu {
-        flex-direction: row;
-    }
+  #top__menu {
+    flex-direction: row;
+  }
 
-    #top__menu-brand img {
-        max-width: 100%;
-    }
-
+  #top__menu-brand img {
+    max-width: 100%;
+  }
 }
 
 #top__menu-brand {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 250px;
-    height: auto;
-    width: 100%;
+  @include flex-center;
+  min-height: 250px;
+  height: auto;
+  width: 100%;
 }
 
 #top__menu__company {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
 }
 
 .top__menu__company-title {
-    font-size: 2.2rem;
-    font-weight: 600;
+  font-size: $font-size-xxxl;
+  font-family: "BloggerSansBold";
 }
 
 .top__menu__company-address {
-    font-size: 1.6rem;
-    margin-top: 10px;
+  font-size: $font-size-m;
+  margin-top: 10px;
+}
+
+.top__menu__company-phone {
+    margin-top: 30px;
 }
 
 .top__menu__company-info,
 .top__menu__company-social,
 .top__menu__company-user {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    min-height: 50px;
-    height: auto;
-    background-color: #55a602;
-    color: white;
-    font-size: 1.7rem;
+  @include flex-center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  background-color: $primary-color-green;
+  color: $white;
+  font-size: $font-size-m;
 }
 
 .top__menu__company-info:first-child {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
-
 @media only screen and (min-width: 768px) {
-
-    .top__menu__company-social,
-    .top__menu__company-user {
-        display: flex;
-        flex-direction: row;
-    }
+  .top__menu__company-social,
+  .top__menu__company-user {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
 .top__menu__company-info ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.top__menu__company-user div:first-child{
+    margin-right: 20px;
 }
 
 #bottom__menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 70px;
-    height: auto;
-    width: 100%;
-    margin-top: 5px;
+  @include flex-center;
+  min-height: 70px;
+  height: auto;
+  width: 100%;
+  margin-top: 5px;
 }
 
 #bottom__menu-list {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0;
 }
 
 @media only screen and (min-width: 768px) {
-    #bottom__menu-list {
-        flex-direction: row;
-        height: 70px;
-    }
+  #bottom__menu-list {
+    flex-direction: row;
+    height: 70px;
+  }
 
-    .top__menu__company-social,
-    .top__menu__company-user {
-        height: 25%;
-    }
+  .top__menu__company-social,
+  .top__menu__company-user {
+    height: 25%;
+  }
 
-    .top__menu__company-info:first-child {
-        height: 50%;
-    }
+  .top__menu__company-info:first-child {
+    height: 50%;
+  }
 }
 
 #bottom__menu-list li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #efca36;
-    color: #efca36;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    background-color: #55a602;
-    cursor: pointer;
-    margin: 0 2px;
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $yellow;
+  color: $yellow;
+  font-size: $font-size-m;
+  text-transform: uppercase;
+  background-color: $primary-color-green;
+  cursor: pointer;
+  margin: 0 2px;
 }
 
-
 #bottom__menu-list li:first-child {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 #bottom__menu-list li:last-child {
-    margin-right: 0;
+  margin-right: 0;
+}
+
+.top__menu__company-social div:first-child  img{
+    transform: rotate(48deg);
+}
+
+.icon-social-media {
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+    background-color:$yellow;
+    border-radius: 19px;
+}
+
+.basket-user {
+    position: relative; 
+    z-index: 1;   
+}
+
+.basket-lenght {
+    position: absolute;
+    top: -15px;
+    right: -52px;
+    height: 30px;
+    min-width: 30px;
+    width: auto; 
+    z-index: 0;  
+    border: 1px solid $yellow;
+    border-radius: 50%; 
+    @include flex-center; 
+    padding-right: 2px; 
+    padding-top: 2px;           
 }
 </style>

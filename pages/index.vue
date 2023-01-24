@@ -1,12 +1,12 @@
 <template>
-  <Header/>
+  <Header />
   <div>
     <section id="cta">
       <div class="cta-text">Wiosenna wyprzedaż towaru</div>
       <div class="cta-button"><button>Zobacz</button></div>
     </section>
     <section id="products">
-      <Product/>
+      <Product />
       <Product />
       <Product />
       <Product />
@@ -16,12 +16,12 @@
       <Product />
     </section>
   </div>
-  <Footer/>
+  <Footer />
 </template>
 <script>
-  import Header from '../components/header.vue';
-  import Footer from '../components/footer.vue'; 
-  import Product from '../components/product.vue';
+import Header from "../components/header.vue";
+import Footer from "../components/footer.vue";
+import Product from "../components/product.vue";
 </script>
 
 <style lang="scss">
@@ -34,7 +34,6 @@
   margin: 10px 0 70px 0;
 }
 
-
 #cta {
   @include flex-center;
   border: 1px solid $primary-color-green;
@@ -43,15 +42,14 @@
   flex-direction: column;
   height: 100px;
   width: 100%;
+  font-family: "BloggerSansBold";
   margin: 30px 0 15px 0;
-  
 }
 
 @media only screen and (min-width: 768px) {
   #cta {
     flex-direction: row;
   }
-
 }
 
 .cta-text {
@@ -87,14 +85,12 @@
   margin-right: 70px;
 }
 
-
-
 @media only screen and (min-width: 768px) {
-    .cta-text {
+  .cta-text {
     width: 60%;
   }
 
-    .cta-button {
+  .cta-button {
     width: 40%;
   }
 }
