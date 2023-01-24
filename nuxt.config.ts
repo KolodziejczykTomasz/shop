@@ -3,8 +3,16 @@ export default defineNuxtConfig({
  css: [ 
     '~/assets/css/base.css',
     '~/assets/css/main.css',
-    '~/assets/scss/main.scss',
   ],
+  vite: {
+        css: {
+                preprocessorOptions: {
+                    scss: {
+                        additionalData: '@import "@/assets/scss/main.scss";',
+                    },
+                },
+            },
+    },
  components: {
     global: true,
     dirs: ['~/components']

@@ -23,10 +23,10 @@
         <div id="bottom__menu">
             <ul id="bottom__menu-list">
                 <li>Home</li>
-                <li>Produkty</li>
-                <li>Sklep</li>
                 <li>O nas</li>
+                <li>Sklep</li>
                 <li>Wysyłka</li>
+                <li>Kontakt</li>
             </ul>
         </div>
     </div>

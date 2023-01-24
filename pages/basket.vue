@@ -70,80 +70,72 @@ import Footer from '../components/footer.vue';
   width: 100%;
   padding: 50px 90px 50px 90px;
   margin: 30px 0;
+
+  
 }
 
 .basket__product {
   display: flex;
   height: 82px;
   margin: 10px 0;
-}
+    & .basket__product-photo {
+    @include flex-center;
+    width: 20%;    
+    border: 1px solid $primary-color-green;
+      & img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border: 1px solid red;
+    }
+  }
 
-.basket__product-photo {
-  display: flex;
-  width: 20%;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid green;
-}
-
-.basket__product-photo img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  border: 1px solid red;
 }
 
 .basket__product-name {
-  display: flex;
-  width: 60%;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.8rem;
+  @include flex-center;
+  width: 60%; 
+  font-size: $font-size-m;
 }
 
 .basket__product-quantity {
-  display: flex;
-  width: 20%;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   flex-direction: column;
-}
+  width: 20%; 
+  
 
-.basket__product-quantity div:first-child {
-  width: 100%;
-  text-align: right;
-  padding-right: 30px;
+    & div:first-child {
+    width: 100%;
+    text-align: right;
+    padding-right: 30px;
+    }
 }
 
 .basket__product-amount {
   display: flex;
-  font-size: 1.8rem;
+  font-size: $font-size-m;
   justify-content: flex-end;
-}
+    & p:first-child {
+    margin-right: 30px;
+    font-size: $font-size-m;
+  }
+    & button {
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+  }
+    & button.basket__product__button-delete {
+    color: red;
+    width: 80px;
+  }
 
-.basket__product-amount p:first-child {
-  margin-right: 30px;
-  font-size: 1.8rem;
-}
-
-.basket__product-amount button {
-  height: 20px;
-  width: 20px;
-  margin: 0 5px;
-}
-
-.basket__product__button-delete {
-  margin: 15px 0;
-  color: red;
-  width: 80px;
 }
 
 .grand-total {
-  border-top: 2px solid #55a602;
+  border-top: 2px solid $primary-color-green;
   text-align: right;
-  font-size: 1.8rem;
+  font-size: $font-size-m;
   font-weight: 600;
-  color: #55a602;
-  ;
+  color: $primary-color-green;
 }
 </style>

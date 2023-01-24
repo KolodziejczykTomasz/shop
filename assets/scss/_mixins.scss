@@ -1,0 +1,21 @@
+@mixin box-shadow-card {
+    -webkit-box-shadow: 0 0 14px - 4px rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 14px - 4px rgba(194, 194, 194, 1);
+    box-shadow: 0 0 14px - 4px rgba(194, 194, 194, 1);
+}
+
+@mixin box-shadow-card-hover {
+    -webkit-box-shadow: 0 0 21px - 4px rgba(194, 194, 194, 1);
+    -moz-box-shadow: 0 0 21px - 4px rgba(194, 194, 194, 1);
+    box-shadow: 0 0 21px - 4px rgba(194, 194, 194, 1);
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background-gradient {
+    background: linear - gradient(90deg, $primary-color-green 49%, $white 100%);
+}
