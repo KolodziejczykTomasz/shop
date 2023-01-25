@@ -17,9 +17,7 @@
         </ul>
         </div>
         <div class="top__menu__company-social">
-          <div><img class="icon-social-media" src="../assets/icons/phone.png" alt="Telefon" /></div>
-          <div><img class="icon-social-media" src="../assets/icons/facebook.png" alt="Facebook" /></div>
-          <div><img class="icon-social-media" src="../assets/icons/instagram.png" alt="Instagram" /></div>
+          <SocialMedia/>
         </div>
         <div class="top__menu__company-user">
           <div>Zaloguj/Zarejestruj</div>
@@ -38,6 +36,9 @@
     </div>
   </div>
 </template>
+<script lang="ts">
+import SocialMedia from "./socialMedia.vue";
+</script>
 <style lang="scss">
 #top__menu {
   display: flex;
@@ -176,18 +177,6 @@
 
 #bottom__menu-list li:last-child {
   margin-right: 0;
-}
-
-.top__menu__company-social div:first-child  img{
-    transform: rotate(48deg);
-}
-
-.icon-social-media {
-    height: 35px;
-    width: 35px;
-    margin: 0 5px;
-    background-color:$yellow;
-    border-radius: 19px;
 }
 
 .basket-user {

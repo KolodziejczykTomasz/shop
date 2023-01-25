@@ -1,21 +1,21 @@
 <template>
   <Header />
-  <section id="product__view">
-    <div class="product__view__parametr">
-      <div class="product__view__parametr-photo">
+  <section id="product">
+    <div class="product__wrapper">
+      <div class="product__photo">
         <img src="" alt="Zdjęcie produktu" />
       </div>
-      <div class="product__view__parametr__details">
-        <p class="product__view__parametr__details-name">Świeca z wosku pszczelego</p>
-        <p class="product__view__parametr__details-price">15zł</p>
-        <div class="product__view__parametr__details-amount">
+      <div class="product__details">
+        <p class="product__details-name">Świeca z wosku pszczelego</p>
+        <p class="product__details-price">15zł</p>
+        <div class="product__details-amount">
           <button>-</button>
           <p>1</p>
           <button>+</button>
         </div>
-        <p class="product__view__parametr__details-availability">Dostępność: 15 sztuk</p>
-        <p class="product__view__parametr__details-add">
-          <button class="product__view__parametr__details-button">
+        <p class="product__details-availability">Dostępność: 15 sztuk</p>
+        <p class="product__details-add">
+          <button class="product__details-button">
             Dodaj do koszyka
           </button>
         </p>
@@ -42,13 +42,13 @@
   <Footer />
 </template>
 <script>
-import Header from "../components/header.vue";
-import Footer from "../components/footer.vue";
-import Product from "../components/product.vue";
+  import Header from "../components/header.vue";
+  import Footer from "../components/footer.vue";
+  import Product from "../components/product.vue";
 </script>
 
 <style lang="scss">
-#product__view {
+#product {
   margin: 30px 0;
   min-height: 500px;
   height: auto;
@@ -65,10 +65,10 @@ import Product from "../components/product.vue";
   padding: 0 5px;
 }
 
-.product__view__parametr {
+.product__wrapper {
   display: flex;
   flex-direction: column;
-  & .product__view__parametr-photo {
+  & .product__photo {
     @include flex-center;
     width: 100%;
     border: 1px solid $primary-color-green;
@@ -81,7 +81,7 @@ import Product from "../components/product.vue";
       border: 1px solid red;
     }
   }
-  & .product__view__parametr__details {
+  & .product__details {
     display: flex;
     flex-direction: column;
     margin-left: 35px;
@@ -90,56 +90,56 @@ import Product from "../components/product.vue";
 }
 
 @media only screen and (min-width: 768px) {
-  .product__view__parametr {
+  .product__wrapper {
     flex-direction: row;
   }
 
-  .product__view__parametr-photo {
+  .product__photo {
     max-width: 500px;
     width: auto;
   }
 }
 
-.product__view__parametr__details-name {
+.product__details-name {
   font-size: $font-size-xl;
   padding-top: 20px;
   margin-bottom: 20px;
   font-weight: $bold;
 }
 
-.product__view__parametr__details-price,
-.product__view__parametr__details-amount,
-.product__view__parametr__details {
+.product__details-price,
+.product__details-amount,
+.product__details {
   font-size: $font-size-m;
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.product__view__parametr__details-amount {
+.product__details-amount {
   display: flex;
   justify-content: flex-start;
 }
 
-.product__view__parametr__details-availability {
+.product__details-availability {
   margin-top: 10px;
   margin-left: -5px;
 }
 
-.product__view__parametr__details-amount button {
+.product__details-amount button {
   height: 20px;
   width: 20px;
   margin: 0 5px;
 }
 
-.product__view__parametr__details-amount button:first-child {
+.product__details-amount button:first-child {
   margin-left: -5px;
 }
 
-.product__view__parametr__details-amount button p {
+.product__details-amount button p {
   padding: 10px;
 }
 
-.product__view__parametr__details-button {
+.product__details-button {
   @include flex-center;
   border: 2px solid $yellow;
   border-radius: 30px;
