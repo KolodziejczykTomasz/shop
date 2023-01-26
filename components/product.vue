@@ -1,12 +1,20 @@
 <template>
   <div class="product__item">
-    <div class="product__item-photo">
-      <img src="" alt="świeca z wosku pszczelego" />
+    <div class="product__item-photo" >
+      <img :src="`static/products/${urlImg}`" :alt="`${title}`">
     </div>
-    <div class="product__item-name">Świeca z wosku pszczelego</div>
-    <div class="product__item-price">15zł</div>
+    <div class="product__item-name">{{ title }}</div>
+    <div class="product__item-price">{{ price }} zł</div>
   </div>
 </template>
+<script setup lang="ts">
+const props = defineProps({
+  urlImg: String,
+  title: String,
+  price: String
+})
+
+</script>
 <style lang="scss">
 .product__item {
   @include flex-center;

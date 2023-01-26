@@ -4,62 +4,62 @@
         "title": "Świeca w kształcie aniołka",
         "price":"15",
         "tags": "aniołek, wosk" ,
-        "url": "../assets/images/products/Numer 1.jpg"       
+        "urlImg": "product_1.jpg"
     },
     {
         "id": "2",
         "title": "Świeca z wosku pszczelego",
         "price":"20",
         "tags": "wosk",
-        "url": "../assets/images/products/Numer 2.jpg"        
+        "urlImg": "product_2.jpg"
     },
     {
         "id": "3",
         "title": "Świeca z wosku pszczelego",
         "price":"20",        
         "tags": "woski",
-        "url": "../assets/images/products/Numer 3.jpg"
+        "urlImg": "product_3.jpg"
     },
     {
         "id": "4",
         "title": "Świeca w kształcie szyszki",
         "price":"15",
         "tags": "szyszka",
-        "url": "../assets/images/products/Numer 4.jpg"        
+        "urlImg": "product_4.jpg"
     },
     {
         "id": "5",
         "title": "Świeca w kształce kuli",
         "price":"18",
         "tags": "kula",
-        "url": "../assets/images/products/Numer 5.jpg"       
+        "urlImg": "product_5.jpg"
     },
     {
         "id": "6",
         "title": "Świeca w kształce choinki",
         "price":"25",
         "tags": "choinka" ,
-        "url": "../assets/images/products/Numer 6.jpg"       
+        "urlImg": "product_6.jpg"
     },
     {
         "id": "7",
         "title": "Świeca w kształce choinki",
         "price":"25",
         "tags": "",
-        "url": "../assets/images/products/Numer 7.jpg"        
+        "urlImg": "product_7.jpg"
     },
     {
         "id": "8",
         "title": "Świeca z wosku pszczelego",
         "price":"30",
         "tags": "choinka",
-        "url": "../assets/images/products/Numer 8.jpg"        
+        "urlImg": "product_8.jpg"
     },
     {
         "id": "9",
         "title": "Świeca w słoiku",
         "price":"40",
         "tags": "słoik",
-        "url": "../assets/images/products/Numer 9.jpg"       
+        "urlImg": "product_9.jpg"
     }
 ]
