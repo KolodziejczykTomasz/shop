@@ -2,19 +2,21 @@
   <Header />
   <div>
     <SalesBar/>
-    <section id="products">
+    <section id="products">        
         <Product
-            v-for="(product, index) in products"  
-            :title="product.title" 
-            :price="product.price" 
-            :urlImg="product.urlImg" 
-            :key="index" 
-        />
+              v-for="(product, index) in products.splice(0,8)"  
+              :title="product.title" 
+              :price="product.price" 
+              :urlImg="product.urlImg" 
+              :id="product.id"
+              :key="index" 
+          />       
     </section>
   </div>
   <Footer />
 </template>
 <script setup>
+
 import productsData from "../assets/data/products.json";
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
@@ -28,12 +30,15 @@ const { product } = defineProps(['product']);
 </script>
 
 <style lang="scss">
-  #products {
+#products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     height: auto;
     width: 100%;
     margin: 10px 0 70px 0;
+    &:last-child {
+      justify-content: flex-start;
+    }
   }
 </style>

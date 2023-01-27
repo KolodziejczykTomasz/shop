@@ -1,22 +1,27 @@
 <template>
-  <div class="product__item">
-    <div class="product__item-photo" >
-      <img :src="`static/products/${urlImg}`" :alt="`${title}`">
+ <NuxtLink :to="`/products/${id}`"> <div class="product">
+  
+    <div class="product-photo" >
+      <img :src="imageUrl" :alt="`${title}`"/>
     </div>
-    <div class="product__item-name">{{ title }}</div>
-    <div class="product__item-price">{{ price }} zł</div>
-  </div>
+    <div class="product-name">{{ title }}</div>
+    <div class="product-price">{{ price }} zł</div>
+  </div></NuxtLink>
 </template>
 <script setup lang="ts">
+
 const props = defineProps({
+  id: String || Number,
   urlImg: String,
   title: String,
   price: String
 })
 
+const imageUrl = new URL(`../static/products/${props.urlImg}`, import.meta.url).href
+
 </script>
 <style lang="scss">
-.product__item {
+.product {
   @include flex-center;
   @include box-shadow-card;
   flex-direction: column;
@@ -25,19 +30,24 @@ const props = defineProps({
   max-height: 400px;
   margin: 15px 5px;
   cursor: pointer;
-  &:hover {
-    @include box-shadow-card-hover;
-  }
+    &:hover {
+      @include box-shadow-card-hover;
+    }
 }
 
-.product__item-photo {
+.product-photo {
   @include flex-center;
   width: 90%;
   height: 280px;
   margin: 0 auto;
+    & img {
+        display: block;
+        width: 230px;
+        height: 230px;       
+      }
 }
 
-.product__item-name {
+.product-name {
   @include flex-center;
   font-size: $font-size-m;
   height: 70px;
@@ -45,7 +55,7 @@ const props = defineProps({
   font-weight: $bold;
 }
 
-.product__item-price {
+.product-price {
   @include flex-center;
   font-size: $font-size-m;
   font-weight: $bold;
@@ -54,7 +64,7 @@ const props = defineProps({
 }
 
 @media only screen and (min-width: 768px) {
-  .product__item {
+  .product {
     width: 24%;
   }
 }

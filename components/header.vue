@@ -36,7 +36,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
 import SocialMedia from "./socialMedia.vue";
 </script>
 <style lang="scss">

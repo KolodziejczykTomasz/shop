@@ -59,7 +59,7 @@
     </div>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
   import MethodPay from "./methodPay.vue";
   import SocialMedia from "./socialMedia.vue";
   import PromotionBar from "./promotionBar.vue";
