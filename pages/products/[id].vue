@@ -3,11 +3,11 @@
     <section id="product">
         <div class="product__wrapper">
             <div class="product__photo">
-                <img src="imageUrl" :alt="`${products[3].title}`" />
+                <img :src="`${product[id].imgUrl}`" :alt="`${product[id].title}`" />
             </div>
             <div class="product__details">
-                <p class="product__details-name">{{ products[3].title}}</p>
-                <p class="product__details-price">{{ products[3].price}}zł</p>
+                <p class="product__details-name">{{ product[id].title}}</p>
+                <p class="product__details-price">{{ product[id].price}}zł</p>
                 <div class="product__details-amount">
                     <button>-</button>
                     <p>1</p>
@@ -22,10 +22,7 @@
             </div>
         </div>
         <div class="product-description">
-            Mam dla Państwa na sprzedaż świece "bubble" z naturalnego wosku pszczelego :) Świece
-            z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony
-            oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych,
-            chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h.
+            {{ product[id].description}}
         </div>
     </section>
     <section id="products__related">
@@ -33,27 +30,29 @@
             <p>Podobne produkty</p>
         </div>
         <div id="products__related-wrapper">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <Product :product="product"/>
+            <Product :product="product"/>
+            <Product :product="product"/>
+            <Product :product="product"/>
         </div>
     </section>
     <Footer />
 </template>
-<script setup lang="ts">
+<script setup>
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
 import Product from "../../components/product.vue";
-import productsData from "../../assets/data/products.json";
+import { useRoute } from "vue-router";
 
-const products = productsData;
-const props = defineProps({
-    id: String || Number,
-    urlImg: String,
-    title: String,
-    price: String
-})
+const { product } = defineProps(['product'])
+const route = useRoute();
+route.params.product.id
+
+
+
+
+
+
 
 
 

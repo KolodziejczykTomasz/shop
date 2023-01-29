@@ -1,23 +1,19 @@
 <template>
- <NuxtLink :to="`/products/${id}`"> <div class="product">
-  
-    <div class="product-photo" >
-      <img :src="imageUrl" :alt="`${title}`"/>
+ <NuxtLink :to="`/products/${product.id}`"> 
+    <div class="product">  
+        <div class="product-photo" >
+          <img :src="imageUrl" :alt="`${product.title}`"/>
+        </div>
+        <div class="product-name">{{ product.title }}</div>
+        <div class="product-price">{{ product.price }} zł</div>
     </div>
-    <div class="product-name">{{ title }}</div>
-    <div class="product-price">{{ price }} zł</div>
-  </div></NuxtLink>
+  </NuxtLink>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup >
 
-const props = defineProps({
-  id: String || Number,
-  urlImg: String,
-  title: String,
-  price: String
-})
 
-const imageUrl = new URL(`../static/products/${props.urlImg}`, import.meta.url).href
+const {product} = defineProps(['product'])
+const imageUrl = new URL(`../public/img/${product.urlImg}`, import.meta.url).href
 
 </script>
 <style lang="scss">
@@ -68,4 +64,5 @@ const imageUrl = new URL(`../static/products/${props.urlImg}`, import.meta.url).
     width: 24%;
   }
 }
+
 </style>

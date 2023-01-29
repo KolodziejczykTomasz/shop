@@ -1,19 +1,25 @@
 <template>
   <Header/>
     <section id="basket">
-      <BasketProduct/>
-      <BasketProduct />
-      <BasketProduct />
+      <CartProduct v-for="(product, index) in cartStore.cart"  
+              :product = product
+              :key="index" 
+          />       
       <div class="grand-total">
-        Łączna wartość zamówienia: 35zł
+        Łączna wartość zamówienia: {{ cartStore.cartTotal }}zł
       </div>
     </section>
   <Footer/>
 </template>
-<script>
+<script setup lang="ts">
 import Header from '../components/header.vue';
 import Footer from '../components/footer.vue';
-import BasketProduct from '../components/basketProduct.vue';
+import CartProduct from '../components/cartProduct.vue';
+
+import { useCartStore } from "@/stores/cartStore";
+const cartStore = useCartStore()
+cartStore.getCart()
+
 </script>
 
 <style lang="scss">

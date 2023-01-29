@@ -1,5 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+modules: [
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: [
+          ['defineStore', 'definePiniaStore'],
+        ],
+      },
+    ],
+  ],
  css: [   
     '~/assets/css/main.css',
   ],

@@ -21,7 +21,7 @@
         </div>
         <div class="top__menu__company-user">
           <div>Zaloguj/Zarejestruj</div>
-          <div class="basket-user">Koszyk<div class="basket-lenght">0</div></div>
+          <div class="basket-user">Koszyk<div class="basket-lenght">{{ cartStore.cartTotalLength }}</div></div>
         </div>
       </div>
     </div>
@@ -38,6 +38,8 @@
 </template>
 <script lang="ts" setup>
 import SocialMedia from "./socialMedia.vue";
+import { useCartStore } from '@/stores/cartStore'
+const cartStore = useCartStore()
 </script>
 <style lang="scss">
 #top__menu {

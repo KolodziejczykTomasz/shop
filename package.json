@@ -18,6 +18,8 @@
     "stylelint-config-standard-scss": "^6.1.0"
   },
   "dependencies": {
-    "nuxt-sass-resources-loader": "^2.0.5"
+    "@pinia/nuxt": "^0.4.6",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "pinia": "^2.0.29"
   }
 }

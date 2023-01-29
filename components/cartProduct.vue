@@ -1,30 +1,32 @@
 <template>
-<div class="basket__product">
-    <div class="basket__product-photo">
-        <img src="" alt="Zdjęcie produktu" />
+<div class="cart__product">
+    <div class="cart__product-photo">
+        <img :src="product.imgUrl" :alt="product.title">
     </div>
-    <div class="basket__product-name">
-        <p>Świeca z wosku pszczelego w kształcie choinki</p>
+    <div class="cart__product-name">
+        <p>{{product.title}}</p>
     </div>
-    <div class="basket__product-quantity">
-        <div class="basket__product-amount">
-            <p>35zł</p>
+    <div class="cart__product-quantity">
+        <div class="cart__product-amount">
+            <p>{{ product.price * product.quantity }}zł</p>
             <button>+</button>
-            <p>1</p>
+            <p>{{ product.quantity }}</p>
             <button>-</button>
-            <button class="basket__product__button-delete">x</button>
+            <button class="cart__product__button-delete">x</button>
         </div>
     </div>
 </div>
 </template>
-
+<script setup lang="ts">
+const { product } = defineProps(['product'])
+</script>
 <style lang="scss">
-.basket__product {
+.cart__product {
     display: flex;
     height: 82px;
     margin: 10px 0;
 
-    & .basket__product-photo {
+    & .cart__product-photo {
         @include flex-center;
         width: 20%;
         border: 1px solid $primary-color-green;
@@ -39,13 +41,13 @@
 
 }
 
-.basket__product-name {
+.cart__product-name {
     @include flex-center;
     width: 60%;
     font-size: $font-size-m;
 }
 
-.basket__product-quantity {
+.cart__product-quantity {
     @include flex-center;
     flex-direction: column;
     width: 20%;
@@ -58,7 +60,7 @@
     }
 }
 
-.basket__product-amount {
+.cart__product-amount {
     display: flex;
     font-size: $font-size-m;
     justify-content: flex-end;
@@ -74,7 +76,7 @@
         margin: 0 5px;
     }
 
-    & button.basket__product__button-delete {
+    & button.cart__product__button-delete {
         color: red;
         width: 80px;
     }
