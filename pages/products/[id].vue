@@ -1,60 +1,54 @@
 <template>
     <Header />
-    <section id="product">
-        <div class="product__wrapper">
-            <div class="product__photo">
-                <img :src="`${product[id].imgUrl}`" :alt="`${product[id].title}`" />
-            </div>
-            <div class="product__details">
-                <p class="product__details-name">{{ product[id].title}}</p>
-                <p class="product__details-price">{{ product[id].price}}zł</p>
-                <div class="product__details-amount">
-                    <button>-</button>
-                    <p>1</p>
-                    <button>+</button>
+    <section>
+        <div id="product">
+            <div class="product__wrapper">
+                <div class="product__photo">
+                    <img src="" :alt="`${product.title}`" />
                 </div>
-                <p class="product__details-availability">Dostępność: 15 sztuk</p>
-                <p class="product__details-add">
-                    <button class="product__details-button">
-                        Dodaj do koszyka
-                    </button>
-                </p>
+                <div class="product__details">
+                    <p class="product__details-name">{{ product.title }}</p>
+                    <p class="product__details-price">{{ product.price }}zł</p>
+                    <div class="product__details-amount">
+                        <button>-</button>
+                        <p>1</p>
+                        <button>+</button>
+                    </div>
+                    <p class="product__details-availability">Dostępność: 15 sztuk</p>
+                    <p class="product__details-add">
+                        <button class="product__details-button">
+                            Dodaj do koszyka
+                        </button>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="product-description">
-            {{ product[id].description}}
+            <div class="product-description">
+                {{ product.description }}
+            </div>
         </div>
     </section>
     <section id="products__related">
         <div id="products__related-bar">
             <p>Podobne produkty</p>
         </div>
-        <div id="products__related-wrapper">
-            <Product :product="product"/>
-            <Product :product="product"/>
-            <Product :product="product"/>
-            <Product :product="product"/>
+        <div id="products__related-wrapper">            
         </div>
     </section>
     <Footer />
 </template>
-<script setup>
+<script setup >
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
-import Product from "../../components/product.vue";
-import { useRoute } from "vue-router";
+import { useCartStore } from "@/stores/cartStore";
+const { data: products } = await useFetch('http://localhost:4000/products');
+const cartStore = useCartStore()
+cartStore.getCart()
 
-const { product } = defineProps(['product'])
-const route = useRoute();
-route.params.product.id
+const { id } = useRoute().params
+const uri = 'http://localhost:4000/products/' + id
 
-
-
-
-
-
-
-
+//  fetch the products
+const { data: product } = await useFetch(uri, { key: id })
 
 </script>
 

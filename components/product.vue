@@ -1,8 +1,8 @@
 <template>
- <NuxtLink :to="`/products/${product.id}`"> 
+ <NuxtLink :to="`/products/${product.id}`" :product="product">  
     <div class="product">  
         <div class="product-photo" >
-          <img :src="imageUrl" :alt="`${product.title}`"/>
+          <img src="../src/img/product_1" :alt="`${product.title}`"/>
         </div>
         <div class="product-name">{{ product.title }}</div>
         <div class="product-price">{{ product.price }} zł</div>
@@ -13,7 +13,7 @@
 
 
 const {product} = defineProps(['product'])
-const imageUrl = new URL(`../public/img/${product.urlImg}`, import.meta.url).href
+const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
 
 </script>
 <style lang="scss">
