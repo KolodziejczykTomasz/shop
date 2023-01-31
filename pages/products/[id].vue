@@ -8,15 +8,10 @@
                 </div>
                 <div class="product__details">
                     <p class="product__details-name">{{ product.title }}</p>
-                    <p class="product__details-price">{{ product.price }}zł</p>
-                    <div class="product__details-amount">
-                        <button>-</button>
-                        <p>1</p>
-                        <button>+</button>
-                    </div>
-                    <p class="product__details-availability">Dostępność: 15 sztuk</p>
+                    <p class="product__details-price">{{ product.price }}zł</p>                  
+                    <p class="product__details-availability">Dostępność: {{ product.availability }} sztuk</p>
                     <p class="product__details-add">
-                        <button class="product__details-button">
+                        <button class="product__details-button" @click="addToBasket()">
                             Dodaj do koszyka
                         </button>
                     </p>
@@ -40,16 +35,16 @@
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
 import { useCartStore } from "@/stores/cartStore";
-const { data: products } = await useFetch('http://localhost:4000/products');
 const cartStore = useCartStore()
-cartStore.getCart()
+cartStore.getCart();
 
 const { id } = useRoute().params
 const uri = 'http://localhost:4000/products/' + id
-
-//  fetch the products
 const { data: product } = await useFetch(uri, { key: id })
 
+const addToBasket = async()=> {
+    await cartStore.addToCart(product)
+}
 </script>
 
 <style lang="scss">
