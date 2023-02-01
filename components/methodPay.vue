@@ -9,6 +9,7 @@
 <style lang="scss" >
 .pay-form {
     display: flex;
+    padding-top: 10px;
 }
 
 .pay-form div:first-child img {

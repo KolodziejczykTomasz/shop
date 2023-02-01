@@ -20,18 +20,18 @@
           <SocialMedia/>
         </div>
         <div class="top__menu__company-user">
-          <div>Zaloguj/Zarejestruj</div>
-          <div class="basket-user">Koszyk<div class="basket-lenght">{{ cartStore.cartTotalLength }}</div></div>
+          <div><NuxtLink to="/login">Logowanie/Zarejestruj</NuxtLink></div>
+          <div class="basket-user">Koszyk<div class="basket-lenght"><NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink></div></div>
         </div>
       </div>
     </div>
     <div id="bottom__menu">
       <ul id="bottom__menu-list">
-        <li>Home</li>
-        <li>O nas</li>
-        <li>Sklep</li>
-        <li>Wysyłka</li>
-        <li>Kontakt</li>
+        <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="/about">O nas</NuxtLink></li>
+        <li><NuxtLink to="/shop">Sklep</NuxtLink></li>
+        <li><NuxtLink to="/send">Wysyłka</NuxtLink></li>
+        <li><NuxtLink to="/contact">Kontakt</NuxtLink></li>
       </ul>
     </div>
   </div>
@@ -140,7 +140,16 @@ const cartStore = useCartStore()
   flex-direction: column;
   height: 100%;
   width: 100%;
-  padding: 0;
+  padding: 0; 
+  transition: .2s;
+  
+    & a {
+      color: $yellow;
+  
+      &:hover {
+        color: $white;
+      }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -152,6 +161,14 @@ const cartStore = useCartStore()
   .top__menu__company-social,
   .top__menu__company-user {
     height: 25%;
+    & a {
+        color: $white;
+        transition: 0,2s;
+        &:hover {
+          color: $yellow;
+        }
+      }
+
   }
 
   .top__menu__company-info:first-child {
@@ -171,6 +188,9 @@ const cartStore = useCartStore()
   background-color: $primary-color-green;
   cursor: pointer;
   margin: 0 2px;
+  & a {
+    color: $yellow;
+  }  
 }
 
 #bottom__menu-list li:first-child {
@@ -183,7 +203,8 @@ const cartStore = useCartStore()
 
 .basket-user {
     position: relative; 
-    z-index: 1;   
+    z-index: 1;
+    
 }
 
 .basket-lenght {
@@ -198,6 +219,10 @@ const cartStore = useCartStore()
     border-radius: 50%; 
     @include flex-center; 
     padding-right: 2px; 
-    padding-top: 2px;           
+    padding-top: 2px;
+    cursor: pointer;  
+    & a {
+      color: $white;
+    }         
 }
 </style>

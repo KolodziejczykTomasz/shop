@@ -6,18 +6,21 @@
         <div class="footer__menu-item">
           <p class="footer__menu-title">INFORMACJE:</p>
           <ul class="circle-list-style-green">
-            <li>Kontakt z nami</li>
-            <li>Warunki wysyłki</li>
-            <li>Regulamin sklepu</li>
-            <li>Polityka Prywatności</li>
+            <li><NuxtLink to="/contact">Kontakt z nami</NuxtLink> </li>
+            <li><NuxtLink to="/send">Warunki wysyłki</NuxtLink></li>
+            <li><NuxtLink to="/rulesShop">Regulamin sklepu</NuxtLink></li>
+            <li><NuxtLink to="/privacyPolicy">Polityka Prywatności</NuxtLink></li>
+            <li>
+              <NuxtLink to="/privacyCookies">Polityka Coookies</NuxtLink>
+            </li>
           </ul>
         </div>
         <div class="footer__menu-item">
           <p class="footer__menu-title">MOJE KONTO:</p>
           <ul class="circle-list-style-green">
-            <li>Moje dane</li>
-            <li>Newsletter</li>
-            <li>Pomoc</li>
+            <li><NuxtLink to="/user">Moje dane</NuxtLink></li>
+            <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
+            <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
           </ul>
           <p class="footer__menu-title">Dołącz do nas</p>
           <SocialMedia/>
@@ -50,7 +53,7 @@
       <div id="footer__company">
         <div id="footer__company-name">Prosto z natury Sp. z o.o.</div>
         <div id="footer__company-politics">
-          Polityka prywatności | Regulamin | Zwroty | Dostawa
+          <NuxtLink to="/privacyPolicy">Polityka prywatności </NuxtLink>| <NuxtLink to="/rulesShop"> Regulamin </NuxtLink>| <NuxtLink to="/send">Zwroty</NuxtLink>  | <NuxtLink to="/send"> Dostawa</NuxtLink>
         </div>
       </div>
     </div>
@@ -74,7 +77,16 @@
     list-style: none;
     margin-bottom: 20px;
     font-size: $font-size-m;
+    & li a {
+        color: $black;
+        transition: .2s;
+        &:hover {
+          color: $yellow;
+        }
+    }
+        
   }
+    
 }
 
 .footer__menu-phone {
@@ -158,6 +170,14 @@
   height: 100%;
   text-align: center;
   font-size: $font-size-s;
+  & a {
+    color: $black;
+    padding: 0 5px;
+    transition: .2s;
+    &:hover {
+      color: $yellow;
+    }
+  }
 }
 
 #copyright {

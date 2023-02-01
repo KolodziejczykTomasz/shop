@@ -21,5 +21,9 @@
     margin: 0 10px;
     background-color: $yellow;
     border-radius: 19px;
+    transition: .2s;
+    &:hover{
+        background-color: $primary-color-green;
+    }
 }
 </style>

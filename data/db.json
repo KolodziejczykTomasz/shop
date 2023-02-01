@@ -1,36 +1,5 @@
 {
-  "cart": [
-    {
-      "__v_isShallow": false,
-      "dep": {
-        "w": 0,
-        "n": 0
-      },
-      "__v_isRef": true,
-      "_rawValue": {
-        "id": 5,
-        "title": "Świeca w kształce kuli",
-        "price": "18",
-        "tags": "kula",
-        "image": "/img/product_5.jpg",
-        "quantity": 1,
-        "availability": 10,
-        "description": "Świeca w kształcie kuli wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-      },
-      "_value": {
-        "id": 5,
-        "title": "Świeca w kształce kuli",
-        "price": "18",
-        "tags": "kula",
-        "image": "/img/product_5.jpg",
-        "quantity": 1,
-        "availability": 10,
-        "description": "Świeca w kształcie kuli wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-      },
-      "quantity": 1,
-      "id": 1
-    }
-  ],
+  "cart": [],
   "products": [
     {
       "id": 1,

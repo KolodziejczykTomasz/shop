@@ -1,7 +1,7 @@
 <template>
 <section id="cta">
     <div class="cta-text">Wiosenna wyprzedaż towaru</div>
-    <div class="cta-button"><button>Zobacz</button></div>
+    <div class="cta-button"><button><NuxtLink to="/shop"> Zobacz</NuxtLink></button></div>
 </section>
 </template>
 
@@ -55,6 +55,13 @@
     letter-spacing: 1.2px;
     border: 1px solid $primary-color-green;
     margin-right: 70px;
+    transition: .2s;    
+    & a {
+        color: $yellow;    
+        &:hover {
+            color: $white;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {

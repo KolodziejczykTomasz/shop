@@ -1,7 +1,7 @@
 <template>
 <div class="footer__menu__newsletter">
     <p class="footer__menu__newsletter-title">NEWSLETTER:</p>
-    <p class="footer__menu__newsletter-content">Zapisz się do newslettera,</p>
+    <p class="footer__menu__newsletter-content"> Zapisz się do newslettera</p>
     <p class="footer__menu__newsletter-content">
         otrzymuj informacje o nowościach i promocjach.
     </p>
@@ -10,7 +10,7 @@
             10% raboatu za zapisanie się do newslettera
         </div>
         <div class="footer__menu__newsletter-button">
-            <button>Zapisz się</button>
+            <button><NuxtLink to="/newsletter">Zapisz się</NuxtLink></button>
         </div>
     </div>
 </div>
@@ -66,5 +66,12 @@
     text-align: center;
     width: 105px;
     background-color: $primary-color-green;
+    transition: .2s; 
+        & a {
+            color: $yellow;
+            &:hover {       
+            color: $white;
+            }
+    }
 }
 </style>
