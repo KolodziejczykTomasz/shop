@@ -70,7 +70,7 @@ export const useCartStore = defineStore('cart', {
 
             await $fetch('http://localhost:4000/cart', {
             method: 'post',
-            body: JSON.stringify({...product, quantity: 1})
+            body: JSON.stringify({...product._value, quantity: 1})
           })
           }
         }

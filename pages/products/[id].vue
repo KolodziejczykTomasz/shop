@@ -44,6 +44,7 @@ const { data: product } = await useFetch(uri, { key: id })
 
 const addToBasket = async()=> {
     await cartStore.addToCart(product)
+    
 }
 </script>
 

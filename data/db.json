@@ -1,5 +1,56 @@
 {
-  "cart": [],
+  "cart": [
+    {
+      "id": 7,
+      "title": "Świeca w kształce choinki",
+      "price": "25",
+      "tags": "",
+      "image": "/img/product_7.jpg",
+      "quantity": 3,
+      "availability": 10,
+      "description": "Świeca w kształcie choinki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    },
+    {
+      "id": 4,
+      "title": "Świeca w kształcie szyszki",
+      "price": "15",
+      "tags": "szyszka",
+      "image": "/img/product_4.jpg",
+      "quantity": 1,
+      "availability": 10,
+      "description": "Świeca w kształcie szyszki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    },
+    {
+      "id": 2,
+      "title": "Świeca z wosku pszczelego",
+      "price": "20",
+      "tags": "wosk",
+      "image": "/img/product_2.jpg",
+      "quantity": 1,
+      "availability": 10,
+      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    },
+    {
+      "id": 3,
+      "title": "Świeca z wosku pszczelego",
+      "price": "20",
+      "tags": "woski",
+      "image": "/img/product_3.jpg",
+      "quantity": 10,
+      "availability": 10,
+      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    },
+    {
+      "id": 9,
+      "title": "Świeca w słoiku",
+      "price": "40",
+      "tags": "słoik",
+      "image": "/img/product_9.jpg",
+      "quantity": 1,
+      "availability": 10,
+      "description": "Świeca w słoiku wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    }
+  ],
   "products": [
     {
       "id": 1,

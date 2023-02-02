@@ -9,11 +9,13 @@
         Łączna wartość zamówienia: {{ cartStore.cartTotal }}zł
       </div>
     </section>
+    <GoToPayBar/>
   <Footer/>
 </template>
 <script setup lang="ts">
 import Header from '../components/header.vue';
 import Footer from '../components/footer.vue';
+import GoToPayBar from '../components/goToPayBar.vue';
 import CartProduct from '../components/cartProduct.vue';
 
 import { useCartStore } from "@/stores/cartStore";
