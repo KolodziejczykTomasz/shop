@@ -12,7 +12,7 @@
                     <p class="product__details-availability">Dostępność: {{ product.availability }} sztuk</p>
                     <p class="product__details-add">
                         <button class="product__details-button" @click="addToBasket()">
-                            Dodaj do koszyka
+                            <NuxtLink to="/cart"> Dodaj do koszyka</NuxtLink>
                         </button>
                     </p>
                 </div>
@@ -32,20 +32,20 @@
     <Footer />
 </template>
 <script setup >
-import Header from "../../components/header.vue";
-import Footer from "../../components/footer.vue";
-import { useCartStore } from "@/stores/cartStore";
-const cartStore = useCartStore()
-cartStore.getCart();
+    import Header from "../../components/header.vue";
+    import Footer from "../../components/footer.vue";
+    import { useCartStore } from "@/stores/cartStore";
 
-const { id } = useRoute().params
-const uri = 'http://localhost:4000/products/' + id
-const { data: product } = await useFetch(uri, { key: id })
+    const cartStore = useCartStore()
+    cartStore.getCart();
 
-const addToBasket = async()=> {
-    await cartStore.addToCart(product)
-    
-}
+    const { id } = useRoute().params
+    const uri = 'http://localhost:4000/products/' + id
+    const { data: product } = await useFetch(uri, { key: id })
+
+    const addToBasket = async()=> {
+        await cartStore.addToCart(product);    
+    }
 </script>
 
 <style lang="scss">
@@ -147,8 +147,7 @@ const addToBasket = async()=> {
 .product__details-button {
     @include flex-center;
     border: 2px solid $yellow;
-    border-radius: 30px;
-    color: $yellow;
+    border-radius: 30px;    
     font-size: $font-size-s;
     height: 40px;
     line-height: 40px;
@@ -156,11 +155,14 @@ const addToBasket = async()=> {
     width: 150px;
     background-color: $primary-color-green;
     margin-left: -10px;
-    margin-top: 40px; 
-    transition: .2s; 
-    &:hover {
+    margin-top: 40px;     
+    & a {
+        transition: .2s; 
+        color: $yellow;
+       &:hover {
             color: $white;
-        }
+        } 
+    }
 }
 
 #products__related-bar {

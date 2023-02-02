@@ -22,9 +22,8 @@ const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
   @include box-shadow-card;
   flex-direction: column;
   width: 100%;
-  min-width: 250px;
-  max-height: 400px;
-  margin: 15px 5px;
+  min-width: 281px;
+  max-height: 400px; 
   cursor: pointer;
     &:hover {
       @include box-shadow-card-hover;
@@ -61,7 +60,7 @@ const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
 
 @media only screen and (min-width: 768px) {
   .product {
-    width: 24%;
+    width: 30%;
   }
 }
 

@@ -3,9 +3,9 @@
     <div>
       <PromotionBar/>
       <div id="footer__menu-container">
-        <div class="footer__menu-item">
+        <div class="footer__menu-item left-margin">
           <p class="footer__menu-title">INFORMACJE:</p>
-          <ul class="circle-list-style-green">
+          <ul class="circle-list-style-green ">
             <li><NuxtLink to="/contact">Kontakt z nami</NuxtLink> </li>
             <li><NuxtLink to="/send">Warunki wysyłki</NuxtLink></li>
             <li><NuxtLink to="/rulesShop">Regulamin sklepu</NuxtLink></li>
@@ -87,6 +87,10 @@
         
   }
     
+}
+
+.left-margin {
+  padding-left: 15px;
 }
 
 .footer__menu-phone {

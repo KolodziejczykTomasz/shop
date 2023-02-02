@@ -27,26 +27,40 @@ cartStore.getCart()
 
 <style lang="scss" scoped>
 #products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    column-gap: 20px;
     height: auto;
     width: 100%;
-    margin: 10px 0 70px auto;   
-      & #products div:last-child {
-          flex-wrap: none;
-          border: 2px solid red;
-        }
-  }
-    @media only screen and (max-width: 767px) {
-      #products {          
-        justify-content: space-between;
+    margin: 40px auto;
+}
+   
+
+    @media only screen and (max-width: 550px) {
+      #products {
+        justify-content: center; 
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 40px;
+      }
+    } 
+    @media only screen and (min-width: 551px) {
+      #products {         
+    grid-template-columns: repeat(2, 1fr);
         padding: 0 40px;
       }
     }
-    @media only screen and (max-width: 667px) {
-      #products {
-        justify-content: center;           
-      }
-    }
+ @media only screen and (min-width: 990px) {
+   #products {
+     grid-template-columns: repeat(3, 1fr);
+     padding: 0 40px;
+   }
+ }
+    
+    @media only screen and (min-width: 1200px) {
+   #products {
+     grid-template-columns: repeat(4, 1fr);    
+   }
+ }
 </style>

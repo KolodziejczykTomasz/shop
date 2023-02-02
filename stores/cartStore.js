@@ -13,7 +13,7 @@ export const useCartStore = defineStore('cart', {
   
     cartTotalLength() {
       return this.cart.reduce((total, item) => {
-        return total + (item.quantity)
+        return total + item.quantity
       }, 0)
     },
   },
@@ -63,14 +63,15 @@ export const useCartStore = defineStore('cart', {
         async addToCart(product) {
           const exists = this.cart.find(item => item.id === product.id)
           if(exists) {
-            this.incQuantity(product)
+            this.incQuantity(product)            
           }
           if(!exists) {
-            this.cart.push({...product, quantity: 1})
+            this.cart.push({...product._value, quantity: 1})
 
             await $fetch('http://localhost:4000/cart', {
             method: 'post',
             body: JSON.stringify({...product._value, quantity: 1})
+            
           })
           }
         }
