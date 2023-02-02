@@ -2,7 +2,7 @@
  <NuxtLink :to="`/products/${product.id}`" :product="product">  
     <div class="product">  
         <div class="product-photo" >
-          <img src="../src/img/product_1" :alt="`${product.title}`"/>
+          <img :src="`${imageUrl}`" :alt="`${product.title}`"/>
         </div>
         <div class="product-name">{{ product.title }}</div>
         <div class="product-price">{{ product.price }} zł</div>

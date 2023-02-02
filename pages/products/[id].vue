@@ -131,7 +131,8 @@ const addToBasket = async()=> {
 .product__details-amount button {
     height: 20px;
     width: 20px;
-    margin: 0 5px;
+    margin: 0 5px;    
+      
 }
 
 .product__details-amount button:first-child {
@@ -154,7 +155,11 @@ const addToBasket = async()=> {
     width: 150px;
     background-color: $primary-color-green;
     margin-left: -10px;
-    margin-top: 40px;
+    margin-top: 40px; 
+    transition: .2s; 
+    &:hover {
+            color: $white;
+        }
 }
 
 #products__related-bar {

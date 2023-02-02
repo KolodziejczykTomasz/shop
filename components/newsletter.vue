@@ -66,9 +66,10 @@
     text-align: center;
     width: 105px;
     background-color: $primary-color-green;
-    transition: .2s; 
+    
         & a {
             color: $yellow;
+            transition: .2s; 
             &:hover {       
             color: $white;
             }

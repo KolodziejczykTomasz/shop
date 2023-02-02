@@ -18,7 +18,7 @@
         <div class="footer__menu-item">
           <p class="footer__menu-title">MOJE KONTO:</p>
           <ul class="circle-list-style-green">
-            <li><NuxtLink to="/user">Moje dane</NuxtLink></li>
+            <li><NuxtLink to="/user/user">Moje dane</NuxtLink></li>
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
           </ul>

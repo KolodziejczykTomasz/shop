@@ -20,7 +20,7 @@
           <SocialMedia/>
         </div>
         <div class="top__menu__company-user">
-          <div><NuxtLink to="/login">Logowanie/Zarejestruj</NuxtLink></div>
+          <div><NuxtLink to="/user/login">Logowanie/Zarejestruj</NuxtLink></div>
           <div class="basket-user">Koszyk<div class="basket-lenght"><NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink></div></div>
         </div>
       </div>
@@ -111,6 +111,7 @@ const cartStore = useCartStore()
   .top__menu__company-user {
     display: flex;
     flex-direction: row;
+    transition: .2s;
   }
 }
 
@@ -141,11 +142,10 @@ const cartStore = useCartStore()
   height: 100%;
   width: 100%;
   padding: 0; 
-  transition: .2s;
   
     & a {
       color: $yellow;
-  
+      transition: .2s;  
       &:hover {
         color: $white;
       }
@@ -223,6 +223,10 @@ const cartStore = useCartStore()
     cursor: pointer;  
     & a {
       color: $white;
+      transition: .2s;
+      &:hover {
+        color: $yellow;
+      }
     }         
 }
 </style>
