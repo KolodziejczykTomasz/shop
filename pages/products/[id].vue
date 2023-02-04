@@ -11,9 +11,10 @@
                     <p class="product__details-price">{{ product.price }}zł</p>                  
                     <p class="product__details-availability">Dostępność: {{ product.availability }} sztuk</p>
                     <p class="product__details-add">
-                        <button class="product__details-button" @click="addToBasket()">
-                            <NuxtLink to="/cart"> Dodaj do koszyka</NuxtLink>
-                        </button>
+                      <NuxtLink to="/cart">    <button class="product__details-button" :disabled="isPending" @click="addToBasket()" >                       
+                            <span v-show="!isPending">Dodaj do koszyka</span>
+                        <span v-show="isPending">dodawanie...</span>
+                        </button></NuxtLink>
                     </p>
                 </div>
             </div>
@@ -34,7 +35,7 @@
 <script setup >
     import Header from "../../components/header.vue";
     import Footer from "../../components/footer.vue";
-    import { useCartStore } from "@/stores/cartStore";
+    import { useCartStore } from "~~/stores/cartStore";
 
     const cartStore = useCartStore()
     cartStore.getCart();
@@ -43,8 +44,14 @@
     const uri = 'http://localhost:4000/products/' + id
     const { data: product } = await useFetch(uri, { key: id })
 
-    const addToBasket = async()=> {
-        await cartStore.addToCart(product);    
+    const isPending = ref(false)
+
+    const addToBasket = async () => {
+        isPending.value = true
+        await cartStore.addToCart(product)
+        setTimeout(() => {
+            isPending.value = false
+        }, 3000)
     }
 </script>
 
@@ -156,14 +163,13 @@
     background-color: $primary-color-green;
     margin-left: -10px;
     margin-top: 40px;     
-    & a {
-        transition: .2s; 
-        color: $yellow;
+   color: $yellow;transition: .2s; 
+        
        &:hover {
             color: $white;
         } 
-    }
 }
+
 
 #products__related-bar {
     @include flex-center;

@@ -18,7 +18,7 @@ import Footer from '../components/footer.vue';
 import GoToPayBar from '../components/goToPayBar.vue';
 import CartProduct from '../components/cartProduct.vue';
 
-import { useCartStore } from "@/stores/cartStore";
+import { useCartStore } from "~~/stores/cartStore";
 const cartStore = useCartStore()
 cartStore.getCart()
 

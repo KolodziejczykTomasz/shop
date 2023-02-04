@@ -23,28 +23,32 @@ export const useCartStore = defineStore('cart', {
             this.cart = data            
         },
          async deleteFromCart(product){
-        this.cart = this.cart.filter(item =>{
-        return item.id !== product.id
-        })
-          await $fetch('http://localhost:4000/cart/' + product.id, {
-            method: 'delete'
+          this.cart = this.cart.filter(item =>{
+          return item.id !== product.id
           })
+            await $fetch('http://localhost:4000/cart/' + product.id, {
+              method: 'delete'
+            })
         },
-        async incQuantity(product) {
-          let updateProduct
 
-          this.cart = this.cart.map(item => {
-            if(item.id === product.id && item.quantity <= item.availability) {
-              item.quantity++
-              updateProduct = item
-            }
-            return item
-          })
+
+          async incQuantity(product) {
+            let updateProduct
+
+            this.cart = this.cart.map(item => {
+              if(item.id === product.id && item.quantity <= item.availability) {
+                item.quantity++
+                updateProduct = item || (updateProduct = product._rawValue)
+              }
+              return item
+            })
+            
             await $fetch('http://localhost:4000/cart/' + product.id, {
             method: 'put',
             body: JSON.stringify(updateProduct)
           })
         },
+
         async decQuantity(product) {
           let updateProduct
 
@@ -60,20 +64,22 @@ export const useCartStore = defineStore('cart', {
             body: JSON.stringify(updateProduct)
           })
         },
-        async addToCart(product) {
-          const exists = this.cart.find(item => item.id === product.id)
-          if(exists) {
-            this.incQuantity(product)            
-          }
-          if(!exists) {
-            this.cart.push({...product._value, quantity: 1})
-
-            await $fetch('http://localhost:4000/cart', {
-            method: 'post',
-            body: JSON.stringify({...product._value, quantity: 1})
-            
-          })
-          }
-        }
+        async addToCart(product) {  
+           const exists = this.cart.find((item) => item.id === (product._rawValue).id)        
+      if (exists) {
+        this.incQuantity(product._rawValue)
+         
       }
-    })
+
+      if (!exists) {
+        this.cart.push({...product._value, quantity: 1})
+     
+        await $fetch('http://localhost:4000/cart', {
+          method: 'post',
+          body: JSON.stringify({...product.value, quantity: 1})
+        })
+      } 
+     
+    },
+  }
+})

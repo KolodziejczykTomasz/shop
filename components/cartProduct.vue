@@ -11,7 +11,7 @@
 </template>
 <script setup lang="ts">
     import ProductQuantity from "@/components/productQuantity.vue"
-    import { useCartStore } from "@/stores/cartStore";
+    import { useCartStore } from "~~/stores/cartStore";
 
     const cartStore = useCartStore()
     cartStore.getCart();

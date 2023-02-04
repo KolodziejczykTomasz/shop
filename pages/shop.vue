@@ -13,7 +13,7 @@ import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 import Product from "../components/product.vue";
 import SalesBar from "../components/salesBar.vue";
-import { useCartStore } from "@/stores/cartStore";
+import { useCartStore } from "~~/stores/cartStore";
 const { data: products } = await useFetch('http://localhost:4000/products');
 
 const cartStore = useCartStore()

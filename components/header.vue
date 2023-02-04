@@ -38,7 +38,7 @@
 </template>
 <script lang="ts" setup>
 import SocialMedia from "./socialMedia.vue";
-import { useCartStore } from '@/stores/cartStore'
+import { useCartStore } from '~~/stores/cartStore'
 const cartStore = useCartStore()
 </script>
 <style lang="scss">
