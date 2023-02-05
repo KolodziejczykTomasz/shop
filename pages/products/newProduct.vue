@@ -1,16 +1,17 @@
 <template>
     <Header />
-    <section id="login">
-        <p class="title">Logowanie</p> 
-        <div class="login__form">
+    <section id="new-product">
+        <p class="title">Dodawanie nowego produktu</p>
+        <div class="new-product__form">
             <form autocomplete="off">
-                <input type="password" name="password" v-model="password" placeholder="Wpisz swój adres email" required />
+                <input type="password" name="password" v-model="password" placeholder="Wpisz swój adres email"
+                    required />
                 <input type="text" name="subject" v-model="subject" placeholder="Hasło" required />
-               
-                <button type="submit">Zaloguj</button>
+
+                <button type="submit">Rejestracja</button>
             </form>
         </div>
-       <NuxtLink to="/user/newUser"> <span> Rejestracja nowego użytkownika</span></NuxtLink>
+        <NuxtLink to="/shop"> <span> Przejdź do sklepu</span></NuxtLink>
     </section>
     <Footer />
 </template>
@@ -20,26 +21,30 @@ import Footer from "../../components/footer.vue";
 </script>
 
 <style lang="scss">
-#login { 
+#new-product {
     margin: 70px 20px;
-     & .title {
+
+    & .title {
         font-size: $font-size-xl;
         font-weight: $bold;
         text-align: center;
         padding-bottom: 70px;
     }
+
     & span {
         font-size: $font-size-s;
         color: $gray;
         text-align: center;
         width: 100%;
         display: inline-block;
+
         &:hover {
             color: $primary-color-green;
         }
     }
 }
-.login__form form {
+
+.new-product__form form {
     @include flex-center;
     flex-direction: column;
 
@@ -56,7 +61,7 @@ import Footer from "../../components/footer.vue";
             border: 2px solid $primary-color-green !important;
         }
     }
-    
+
     & button {
         @include flex-center;
         border: 2px solid $yellow;

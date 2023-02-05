@@ -19,6 +19,9 @@
           <p class="footer__menu-title">MOJE KONTO:</p>
           <ul class="circle-list-style-green">
             <li><NuxtLink to="/user/user">Moje dane</NuxtLink></li>
+            <li>
+              <NuxtLink to="/products/newProduct">Dodaj produkt</NuxtLink>
+            </li>
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
           </ul>

@@ -11,10 +11,12 @@
                     <p class="product__details-price">{{ product.price }}zł</p>                  
                     <p class="product__details-availability">Dostępność: {{ product.availability }} sztuk</p>
                     <p class="product__details-add">
-                      <NuxtLink to="/cart">    <button class="product__details-button" :disabled="isPending" @click="addToBasket()" >                       
+                      <NuxtLink to="/cart">    
+                        <button class="product__details-button" :disabled="isPending" @click="addToBasket()" >                       
                             <span v-show="!isPending">Dodaj do koszyka</span>
-                        <span v-show="isPending">dodawanie...</span>
-                        </button></NuxtLink>
+                            <span v-show="isPending">dodawanie...</span>
+                        </button>
+                       </NuxtLink>
                     </p>
                 </div>
             </div>
@@ -25,9 +27,10 @@
     </section>
     <section id="products__related">
         <div id="products__related-bar">
-            <p>Podobne produkty</p>
+            <div>Podobne produkty</div>        
         </div>
-        <div id="products__related-wrapper">            
+        <div id="products__related-wrapper">    
+        <Product :class="{ specials: isSpecials}" v-for="item in allProducts.filter(item => item.tags === product.tags && item.id !== product.id)" :product=product :key="index" />        
         </div>
     </section>
     <Footer />
@@ -36,7 +39,7 @@
     import Header from "../../components/header.vue";
     import Footer from "../../components/footer.vue";
     import { useCartStore } from "~~/stores/cartStore";
-
+    import Product from "../../components/product.vue";
     const cartStore = useCartStore()
     cartStore.getCart();
 
@@ -45,7 +48,7 @@
     const { data: product } = await useFetch(uri, { key: id })
 
     const isPending = ref(false)
-
+const { data: allProducts } = await useFetch('http://localhost:4000/products');
     const addToBasket = async () => {
         isPending.value = true
         await cartStore.addToCart(product)
@@ -170,7 +173,6 @@
         } 
 }
 
-
 #products__related-bar {
     @include flex-center;
     height: 70px;
@@ -179,17 +181,52 @@
     color: $yellow;
     font-family: "BloggerSansBold";
     background-color: $primary-color-green;
+    & p {
+        display: block;
+    }
 }
 
 #products__related {
-    margin-bottom: 70px;
+    width: 100%;
+
 
     & #products__related-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        display: grid;
+        justify-content: left;
+        align-items: center;
+        row-gap: 20px;
+        column-gap: 20px;
         height: auto;
         width: 100%;
+        margin: 70px 0;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #products__related-wrapper {
+        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (min-width: 551px) {
+    #products__related-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (min-width: 990px) {
+    #products__related-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #products__related-wrapper {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 </style>

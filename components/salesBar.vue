@@ -1,7 +1,7 @@
 <template>
 <section id="cta">
     <div class="cta-text">Wiosenna wyprzedaż towaru</div>
-    <div class="cta-button"><button><NuxtLink to="/shop"> Zobacz</NuxtLink></button></div>
+    <div class="cta-button"><button><NuxtLink to="/shopSpecials"> Zobacz</NuxtLink></button></div>
 </section>
 </template>
 
