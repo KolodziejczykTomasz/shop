@@ -11,9 +11,9 @@
             <li>ul. Lipowa 1/1, 11-100 Lidzbark Warmiński</li>            
           </ul>
         <ul class="top__menu__company-phone">
-            <li>tel: +48 89 378 22 41</li>
-            <li>tel. +47 607 909 909</li>
-            <li>poczta@prostoznatury.pl</li>
+            <li><a href="tel:+48 89 378 22 41" rel="nofollow">tel.: +48 89 378 22 41</a></li>
+            <li><a href="tel:+47 607 909 909" rel="nofollow">tel.: +47 607 909 909</a></li>
+            <li><a href="mailto:poczta@prostoznatury.pl">poczta@prostoznatury.pl</a></li>
         </ul>
         </div>
         <div class="top__menu__company-social">
@@ -86,6 +86,12 @@ const cartStore = useCartStore()
 
 .top__menu__company-phone {
     margin-top: 30px;
+    & a {
+      color: $white;
+      &:hover {
+        color: $yellow;
+      }
+    }
 }
 
 .top__menu__company-info,

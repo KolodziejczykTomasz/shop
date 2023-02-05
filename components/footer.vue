@@ -27,19 +27,19 @@
         </div>
         <div class="footer__menu-item">
           <p class="footer__menu-title">KONTAKT Z NAMI:</p>
-          <ul>
+          <ul class="footer__menu-address">
             <li>Prosto z natury</li>
             <li>ul. Lipowa 1/1</li>
             <li>11-100 Lidzbark Warminski</li>
             <li>NIP: 5213668111</li>
           </ul>
           <ul class="footer__menu-phone">
-            <li>tel: +48 89 378 22 41</li>
-            <li>tel. +47 607 909 909</li>
-            <li>poczta@prostoznatury.pl</li>
+              <li><a href="tel:+48 89 378 22 41" rel="nofollow">tel.: +48 89 378 22 41</a></li>
+              <li><a href="tel:+47 607 909 909" rel="nofollow">tel.: +47 607 909 909</a></li>
+              <li><a href="mailto:poczta@prostoznatury.pl">poczta@prostoznatury.pl</a></li>
           </ul>
           <p class="footer__menu-title">Bank</p>
-          <ul>
+          <ul class="footer__menu-account">
             <li>ING Bank Śląski:</li>
             <li>95 1050 0000 1000 0091 0000 1111</li>
           </ul>
@@ -72,12 +72,15 @@
 #footer {
   min-height: 300px;
   height: auto;
-  width: 100%;
-  & ul {
+  width: 100%; 
+  font-size: $font-size-m;
+}
+.footer__menu-address {
     list-style: none;
     margin-bottom: 20px;
     font-size: $font-size-m;
-    & li a {
+    color: $black;
+    & a {
         color: $black;
         transition: .2s;
         &:hover {
@@ -86,21 +89,43 @@
     }
         
   }
-    
+.footer__menu-account {
+  list-style: none;
+    margin-top: 20px;
+    font-size: $font-size-m;
 }
-
 .left-margin {
   padding-left: 15px;
 }
-
-.footer__menu-phone {
-  color: $primary-color-green;
-  font-weight: $bold;
+#footer__company-politics {
+  @include flex-center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: $font-size-s;
+  & a {
+    padding: 0 5px;
+    transition: .2s;
+    &:hover {
+      color: $yellow;
+    }
+  }
 }
+
+
 
 #footer .circle-list-style-green {
   list-style-type: circle;
   margin-left: 10px;
+  margin-bottom: 20px;
+  & a {
+      color: $black;
+      transition: .2s;
+  
+      &:hover {
+        color: $yellow;
+      }
+    }
 }
 
 #footer ul.circle-list-style-green li::marker {
@@ -121,7 +146,19 @@
   height: 100%;
   min-height: 290px;
 }
-
+.footer__menu-phone {
+  font-weight: $bold;
+  color: $primary-color-green;
+  list-style: none;
+  margin-bottom:20px;
+  & li a {
+        color: $primary-color-green;
+  
+      &:hover {
+        color: $yellow;
+      }
+    }
+}
 @media only screen and (min-width: 768px) {
   .footer__menu-item {
     width: 20%;
@@ -168,21 +205,6 @@
   font-size: $font-size-s;
 }
 
-#footer__company-politics {
-  @include flex-center;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: $font-size-s;
-  & a {
-    color: $black;
-    padding: 0 5px;
-    transition: .2s;
-    &:hover {
-      color: $yellow;
-    }
-  }
-}
 
 #copyright {
   height: 30px;

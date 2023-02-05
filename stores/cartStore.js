@@ -12,16 +12,17 @@ export const useCartStore = defineStore('cart', {
     },
   
     cartTotalLength() {
-      return this.cart.reduce((total, item) => {
-        return total + item.quantity
-      }, 0)
-    },
+          return this.cart.reduce((total, item) => {
+            return total + item.quantity
+          }, 0)
+        },   
   },
     actions:{
         async getCart(){
             const data = await $fetch('http://localhost:4000/cart')
-            this.cart = data            
+            this.cart = data               
         },
+     
          async deleteFromCart(product){
           this.cart = this.cart.filter(item =>{
           return item.id !== product.id
@@ -37,7 +38,7 @@ export const useCartStore = defineStore('cart', {
 
             this.cart = this.cart.map(item => {
               if(item.id === product.id && item.quantity <= item.availability) {
-                item.quantity++
+                item.quantity++                
                 updateProduct = item || (updateProduct = product._rawValue)
               }
               return item
@@ -54,7 +55,7 @@ export const useCartStore = defineStore('cart', {
 
           this.cart = this.cart.map(item => {
             if(item.id === product.id &&  item.quantity > 1 ) {
-              item.quantity--
+              item.quantity--              
               updateProduct = item
             }
             return item
