@@ -4,11 +4,16 @@
         <p class="title">Dodawanie nowego produktu</p>
         <div class="new-product__form">
             <form autocomplete="off">
-                <input type="password" name="password" v-model="password" placeholder="Wpisz swój adres email"
-                    required />
-                <input type="text" name="subject" v-model="subject" placeholder="Hasło" required />
-
-                <button type="submit">Rejestracja</button>
+                <input type="id" name="id" v-model="id" placeholder="Identyfikator" />
+                <input type="test" name="title" v-model="title" placeholder="Nazwa produktu" />
+                <input type="text" name="price" v-model="price" placeholder="Cena" />
+                <input type="test" name="tags" v-model="title" placeholder="Tag" />
+                <input type="text" name="image" v-model="image" placeholder="URL" />
+                <input type="test" name="quantity" v-model="quantity" placeholder="Ilość" />
+                <input type="text" name="availability" v-model="price" placeholder="Dostępność" />
+                <input type="text" name="specials" v-model="specials" placeholder="Objęty promocją?" />
+                <input type="text" name="description" v-model="description" placeholder="Opis" />
+                <button type="submit">Dodaj</button>
             </form>
         </div>
         <NuxtLink to="/shop"> <span> Przejdź do sklepu</span></NuxtLink>

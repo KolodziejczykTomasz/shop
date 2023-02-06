@@ -18,10 +18,25 @@
     margin: 30px 0 15px 0;
 }
 
+@media only screen and (max-width: 767px){
+     #cta {
+        flex-direction: column;
+        & .cta-button {
+            justify-content: center;
+                        
+        }
+    }
+}
+
 @media only screen and (min-width: 768px) {
     #cta {
-        flex-direction: row;
-    }
+            flex-direction: row;
+    
+            & .cta-button {
+                justify-content: flex-end;
+    
+            }
+        }
 }
 
 .cta-text {

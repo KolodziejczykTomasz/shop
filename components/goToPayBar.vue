@@ -25,6 +25,12 @@
     margin: 30px 0 15px 0;
 }
 
+
+@media only screen and (max-width: 767px) {
+    #goToPayBar {
+        flex-direction: row;      
+    }
+}
 @media only screen and (min-width: 768px) {
     #goToPayBar {
         flex-direction: row;

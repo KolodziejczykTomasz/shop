@@ -1,6 +1,6 @@
 <template>
    <Header />
-   <section>
+   <section class="rulesShop">
       <p>Regulamin sklepu</p>
       <ol>
       <li>Sprzedawca prezentuje na Stronie Towary, ich opisy, cenniki i inne informacje dotyczące Towarów z asortymentu Sklepu.
@@ -26,7 +26,7 @@ import Footer from "../components/footer.vue";
 </script>
 
 <style lang="scss">
-section {
+.rulesShop {
    @include flex-center;
    flex-direction: column;
    font-size: $font-size-m;

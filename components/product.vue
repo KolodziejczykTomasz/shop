@@ -14,7 +14,7 @@
 
 
 const {product} = defineProps(['product']);
-const isSpecials = (product.specials === true);
+const isSpecials = product.specials === true;
 const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
 
 </script>
@@ -31,19 +31,19 @@ const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
     &:hover {
       @include box-shadow-card-hover;
     } & .non-specials {
-              visibility: hidden;
-            }
-            & .specials {
-              @include flex-center;
-              @include background-gradient;
-              position: absolute;
-              color: $yellow;
-              width: 100%;
-              height: 50px;
-              font-size: $font-size-xl;
-              text-transform: uppercase;
-              visibility: visible;
-            }       
+        visibility: hidden;
+      }
+      & .specials {
+        @include flex-center;
+        @include background-gradient;
+        position: absolute;
+        color: $yellow;
+        width: 100%;
+        height: 50px;
+        font-size: $font-size-xl;
+        text-transform: uppercase;
+        visibility: visible;
+      }      
 }
 
 .product-photo {
@@ -58,20 +58,15 @@ const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
       }
 }
 
-.product-name {
+.product-name, .product-price {
   @include flex-center;
   font-size: $font-size-m;
   height: 70px;
   width: 100%;
-  font-weight: $bold;
 }
 
-.product-price {
-  @include flex-center;
-  font-size: $font-size-m;
-  font-weight: $bold;
-  height: 50px;
-  width: 100%;
+.product-price { 
+  height: 50px;  
 }
 
 @media only screen and (min-width: 768px) {

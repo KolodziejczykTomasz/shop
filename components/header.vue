@@ -21,7 +21,10 @@
         </div>
         <div class="top__menu__company-user">
           <div><NuxtLink to="/user/login">Logowanie/Zarejestruj</NuxtLink></div>
-          <div class="basket-user">Koszyk<div class="basket-lenght"><NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink></div></div>
+          <div class="basket-user">Koszyk<div class="basket-lenght">
+            <NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -48,16 +51,6 @@ const cartStore = useCartStore()
   min-height: 140px;
   height: auto;
   width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-  #top__menu {
-    flex-direction: row;
-  }
-
-  #top__menu-brand img {
-    max-width: 100%;
-  }
 }
 
 #top__menu-brand {
@@ -110,15 +103,7 @@ const cartStore = useCartStore()
 .top__menu__company-info:first-child {
   text-align: center;
   width: 100%;
-}
-
-@media only screen and (min-width: 768px) {
-  .top__menu__company-social,
-  .top__menu__company-user {
-    display: flex;
-    flex-direction: row;
-    transition: .2s;
-  }
+ 
 }
 
 .top__menu__company-info ul {
@@ -128,7 +113,16 @@ const cartStore = useCartStore()
 }
 
 .top__menu__company-user div:first-child{
-    margin-right: 20px;
+    margin-right: 20px; 
+    & a {
+      color: $white;
+      transition: .2s;
+      &:hover {
+        color: $yellow;
+        
+      }
+    }
+    
 }
 
 #bottom__menu {
@@ -158,30 +152,6 @@ const cartStore = useCartStore()
     }
 }
 
-@media only screen and (min-width: 768px) {
-  #bottom__menu-list {
-    flex-direction: row;
-    height: 70px;
-  }
-
-  .top__menu__company-social,
-  .top__menu__company-user {
-    height: 25%;
-    & a {
-        color: $white;
-        transition: 0,2s;
-        &:hover {
-          color: $yellow;
-        }
-      }
-
-  }
-
-  .top__menu__company-info:first-child {
-    height: 50%;
-  }
-}
-
 #bottom__menu-list li {
   @include flex-center;
   position: relative;
@@ -209,8 +179,7 @@ const cartStore = useCartStore()
 
 .basket-user {
     position: relative; 
-    z-index: 1;
-    
+    z-index: 1;    
 }
 
 .basket-lenght {
@@ -234,5 +203,117 @@ const cartStore = useCartStore()
         color: $yellow;
       }
     }         
+}
+
+@media only screen and (max-width: 600px) {
+  #top__menu {
+    flex-direction: column;
+  }
+
+  #top__menu-brand {
+    max-height: 180px;  
+    overflow: hidden;
+
+    & img {
+      display: block;
+      width: auto;
+      height: 100%;  
+      background-size: contain;  
+  }
+}
+    .top__menu__company-info, 
+    .top__menu__company-user {
+      padding: 20px 5px;      
+    }
+
+    .basket-user {
+      margin-top: 30px;
+    }
+
+    #bottom__menu-list li{
+      height: 40px;
+      margin-bottom:1px;
+    }
+
+
+}
+
+@media only screen and (min-width: 601px) {
+  #top__menu {
+    flex-direction: row;
+  }
+    #top__menu-brand {  
+      & img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+      }
+    }
+.top__menu__company-info,
+.top__menu__company-user {
+  padding: 20px 5px;
+}
+
+.basket-user {
+  margin-top: 30px;
+}
+
+#bottom__menu-list li {
+  height: 40px;
+  margin-bottom: 1px;
+}
+}
+@media only screen and (min-width: 768px) {
+
+  #top__menu-brand img {
+    max-width: 100%;
+  }
+    .top__menu__company-info,
+    .top__menu__company-user {
+      padding: 50px 5px 0 5px;
+    }
+  
+    .basket-user {
+      margin-top: 0;
+    }
+  
+    #bottom__menu-list li {
+      width: 100%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .top__menu__company-social,
+  .top__menu__company-user {
+    display: flex;
+    flex-direction: row;
+    transition: .2s;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #bottom__menu-list {
+    flex-direction: row;
+    height: 70px;
+  }
+
+  .top__menu__company-social,
+  .top__menu__company-user {
+    height: 25%;
+    & a {
+        color: $white;
+        transition: 0,2s;
+        &:hover {
+          color: $yellow;
+        }
+      }
+  }
+
+  .top__menu__company-info:first-child {
+    height: 50%;
+  }
 }
 </style>

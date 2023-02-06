@@ -1,8 +1,8 @@
 <template>
     <Header />
     <section>
-        <div id="product">
-            <div class="product__wrapper">
+        <div id="product__single">
+            <div class="product__single__wrapper">
                 <div class="product__photo">
                     <img src="" :alt="`${product.title}`" />
                 </div>
@@ -20,17 +20,17 @@
                     </p>
                 </div>
             </div>
-            <div class="product-description">
+            <div class="product__details-description">
                 {{ product.description }}
             </div>
         </div>
     </section>
-    <section id="products__related">
+    <section id="products__related" v-if="allProducts.filter(item => item.tags === product.tags).length > 1">
         <div id="products__related-bar">
             <div>Podobne produkty</div>        
         </div>
-        <div id="products__related-wrapper">    
-        <Product :class="{ specials: isSpecials}" v-for="item in allProducts.filter(item => item.tags === product.tags && item.id !== product.id)" :product=product :key="index" />        
+        <div id="products__related-wrapper"> 
+            <Product :class="{ specials: isSpecials}" v-for="(item, index) in allProducts.filter(item => item.tags === product.tags && item.id !== product.id)" :product=product :key="index" />    
         </div>
     </section>
     <Footer />
@@ -46,9 +46,10 @@
     const { id } = useRoute().params
     const uri = 'http://localhost:4000/products/' + id
     const { data: product } = await useFetch(uri, { key: id })
+    const isSpecials = product.specials === true;
 
     const isPending = ref(false)
-const { data: allProducts } = await useFetch('http://localhost:4000/products');
+    const { data: allProducts } = await useFetch('http://localhost:4000/products'); 
     const addToBasket = async () => {
         isPending.value = true
         await cartStore.addToCart(product)
@@ -59,26 +60,25 @@ const { data: allProducts } = await useFetch('http://localhost:4000/products');
 </script>
 
 <style lang="scss">
-#product {
-    margin: 30px 0;
-    min-height: 500px;
+#product__single {
+    margin: 50px 0 10px 0;   
     height: auto;
     width: 100%;
 }
 
-.product-description {
+.product__details-description {
     min-height: 100px;
     height: auto;
     width: 100%;
     font-size: $font-size-m;
     line-height: 24px;
-    margin-top: 20px;
+    margin-top: 40px;
     padding: 0 5px;
 }
 
-.product__wrapper {
+.product__single__wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 
     & .product__photo {
         @include flex-center;
@@ -125,6 +125,7 @@ const { data: allProducts } = await useFetch('http://localhost:4000/products');
 .product__details-amount,
 .product__details {
     font-size: $font-size-m;
+    font-weight: normal;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -198,7 +199,7 @@ const { data: allProducts } = await useFetch('http://localhost:4000/products');
         column-gap: 20px;
         height: auto;
         width: 100%;
-        margin: 70px 0;
+        margin: 50px 0;
     }
 }
 

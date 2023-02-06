@@ -1,11 +1,11 @@
 <template>
-<div class="cart__product-quantity">
-    <div class="cart__product-amount">
+<div class="cart__quantity">
+    <div class="cart__quantity-amount">
         <p>{{ product.price * product.quantity }}zł</p>
        <button @click="cartStore.decQuantity(product)">-</button>
         <p>{{ product.quantity }}</p>
          <button @click="cartStore.incQuantity(product)">+</button>
-        <button class="cart__product__button-delete" @click="cartStore.deleteFromCart(product)">x</button>
+        <button class="cart__quantity__button-delete" @click="cartStore.deleteFromCart(product)">x</button>
     </div>
 </div>
 </template>
@@ -16,7 +16,7 @@
     const { product } = defineProps(['product']);
 </script>
 <style lang="scss">
-.cart__product-quantity {
+.cart__quantity-quantity {
     @include flex-center;
     flex-direction: column;
     width: 20%;
@@ -29,7 +29,7 @@
     }
 }
 
-.cart__product-amount {
+.cart__quantity-amount {
     display: flex;
     font-size: $font-size-m;
     justify-content: flex-end;
@@ -45,7 +45,7 @@
         margin: 0 5px;
     }
 
-    & button.cart__product__button-delete {
+    & button.cart__quantity__button-delete {
         color: red;
         width: 80px;
     }
