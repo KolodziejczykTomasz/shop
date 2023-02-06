@@ -2,7 +2,12 @@ import {defineStore} from "pinia";
 
 export const useCartStore = defineStore('cart', {
     state: () => ({
-        cart:[]
+        cart:[],
+        newsletter: [],
+        contact: [],
+        newProduct: [],
+        users: [],
+        discount: []
     }),
     getters: {
     cartTotal() {
@@ -65,6 +70,7 @@ export const useCartStore = defineStore('cart', {
             body: JSON.stringify(updateProduct)
           })
         },
+
         async addToCart(product) {  
            const exists = this.cart.find((item) => item.id === (product._rawValue).id)        
       if (exists) {
@@ -82,5 +88,13 @@ export const useCartStore = defineStore('cart', {
       } 
      
     },
-  }
+      async submitNewsletterForm(email) {         
+          this.newsletter.push({email})
+          
+              await $fetch('http://localhost:4000/newsletter', {
+          method: 'post',
+          body: JSON.stringify({email})
+        })  
+},
+    }
 })

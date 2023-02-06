@@ -30,7 +30,10 @@
             <div>Podobne produkty</div>        
         </div>
         <div id="products__related-wrapper"> 
-            <Product :class="{ specials: isSpecials}" v-for="(item, index) in allProducts.filter(item => item.tags === product.tags && item.id !== product.id)" :product=product :key="index" />    
+            <Product :class="{ specials: isSpecials}"  v-for="(product, index) in allProducts.filter(item => item.tags === product.tags && item.id !== product.id)"
+                :product="product"
+                :key="index" 
+            />    
         </div>
     </section>
     <Footer />

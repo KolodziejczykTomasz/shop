@@ -3,17 +3,32 @@
     <section id="newsletter">
         <p class="title">Zapisz się do naszego newslettera</p>
         <div class="newsletter__form">
-            <form autocomplete="off" >                
-               <input type="mail" name="email" v-model="email" placeholder="Wpisz swój adres email" required/>
+            <form autocomplete="off" @submit.prevent="addEmailToNewsletter()">                
+               <input type="email" name="email" v-model="newsletterEmail.email" placeholder="Wpisz swój adres email" required/>
                 <button type="submit">Zapisz</button>
             </form>
         </div>
     </section>
     <Footer />
 </template>
-<script setup >
+<script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+import { useCartStore } from "~~/stores/cartStore";
+const cartStore = useCartStore()
+cartStore.getCart();
+
+interface newsletterEmail {   
+    email: string   
+}
+
+const newsletterEmail: newsletterEmail = {email: ""};
+const addEmailToNewsletter = async () => {
+    await cartStore.submitNewsletterForm(newsletterEmail.email)    
+    setTimeout(() => {       
+        alert("Dziekujemy, adres email został dodany!!!");        
+    }, 1000)
+    }
 </script>
 
 <style lang="scss">
