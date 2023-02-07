@@ -3,9 +3,9 @@
     <section id="login">
         <p class="title">Logowanie</p> 
         <div class="login__form">
-            <form autocomplete="off">
-                <input type="password" name="password" v-model="password" placeholder="Wpisz swój adres email" required />
-                <input type="text" name="subject" v-model="subject" placeholder="Hasło" required />
+            <form autocomplete="off" @submit.prevent="loginUserToApp()">
+                <input type="email" name="email" v-model="loginUser.email" placeholder="Wpisz swój adres email" required />
+                <input type="password" name="password" v-model="loginUser.password" placeholder="Hasło" required />
                
                 <button type="submit">Zaloguj</button>
             </form>
@@ -14,9 +14,28 @@
     </section>
     <Footer />
 </template>
-<script setup >
-import Header from "../../components/header.vue";
-import Footer from "../../components/footer.vue";
+<script setup lang="ts">
+    import Header from "../../components/header.vue";
+    import Footer from "../../components/footer.vue";
+
+    import { useCartStore } from "~~/stores/cartStore";
+
+    const cartStore = useCartStore()
+    cartStore.getCart();
+
+    interface loginUser {
+        email: string,
+        password: string,
+        
+    }
+
+    const loginUser: loginUser = { email: "", password: ""};
+    const loginUserToApp = async () => {
+        await cartStore.submitLoginForm(loginUser)
+        setTimeout(() => {
+            alert("Logowanie udane");
+        }, 1000)
+    }
 </script>
 
 <style lang="scss">

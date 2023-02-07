@@ -3,11 +3,11 @@
     <section id="new-user">
         <p class="title">Rejestracja nowego użytkownika</p>
         <div class="new-user__form">
-            <form autocomplete="off">
-                <input type="password" name="password" v-model="password" placeholder="Wpisz swój adres email"
+            <form autocomplete="off" @submit.prevent="signUpUserToApp()">
+                <input type="email" name="email" v-model="addUser.email" placeholder="Wpisz swój adres email"
                     required />
-                <input type="text" name="subject" v-model="subject" placeholder="Hasło" required />
-
+                <input type="password" name="password" v-model="addUser.password" placeholder="Hasło" required />
+                   
                 <button type="submit">Rejestracja</button>
             </form>
         </div>
@@ -15,9 +15,28 @@
     </section>
     <Footer />
 </template>
-<script setup >
+<script setup lang="ts" >
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
+
+import { useCartStore } from "~~/stores/cartStore";
+
+const cartStore = useCartStore()
+cartStore.getCart();
+
+interface addUser {
+    email: string,
+    password: string,
+
+}
+
+const addUser: addUser = { email: "", password: "" };
+const signUpUserToApp = async () => {
+    await cartStore.submitSingUpForm(addUser)
+    setTimeout(() => {
+        alert("Użytkownik dodany");
+    }, 1000)
+}
 </script>
 
 <style lang="scss">

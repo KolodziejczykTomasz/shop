@@ -6,11 +6,11 @@
             <div>
                 <p class="subtitle">Napisz do nas</p> 
                 <div class="contact__form">
-                    <form autocomplete="off" >
-                        <input type="text" name="name" v-model="name" placeholder="Wpisz swoje imię" required/>
-                        <input type="mail" name="email" v-model="email" placeholder="Wpisz swój adres email" required/>
-                        <input type="text" name="subject" v-model="subject" placeholder="Temat" required/>
-                        <textarea placeholder="Wiadomość" v-model="message" name="message" required></textarea>
+                    <form autocomplete="off" @submit.prevent="addContactMessage()">
+                        <input type="text" name="name" v-model="contactMessage.name" placeholder="Wpisz swoje imię" required/>
+                        <input type="email" name="email" v-model="contactMessage.email" placeholder="Wpisz swój adres email" required/>
+                        <input type="text" name="subject" v-model="contactMessage.subject" placeholder="Temat" required/>
+                        <textarea placeholder="Wiadomość" v-model="contactMessage.message" name="message" required></textarea>
                         <button type="submit">Wyślij</button>
                     </form>
                 </div>
@@ -20,7 +20,7 @@
                 <div>
                     <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1515.990476992065!2d20.57510733731571!3d54.127336381087034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2f5a2d6111b95%3A0x23ac2d005320a112!2sPoligraf.%20Sp%C3%B3%C5%82dzielnia%20Pracy!5e0!3m2!1spl!2spl!4v1675571525291!5m2!1spl!2spl"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    width="600" height="450" style="border:0;" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -29,9 +29,28 @@
     </section>
     <Footer />
 </template>
-<script setup >
+<script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+import { useCartStore } from "~~/stores/cartStore";
+
+const cartStore = useCartStore()
+cartStore.getCart();
+
+interface contactMessage {
+    name: string,
+    email: string,
+    subject: string,
+    message: string
+}
+
+const contactMessage: contactMessage = { email: "", name: "", subject: "", message: "" };
+const addContactMessage = async () => {
+    await cartStore.submitContactForm(contactMessage)
+    setTimeout(() => {
+        alert("Dziekujemy, wiadmość została wysłana!!!");
+    }, 1000)
+}
 </script>
 
 <style lang="scss">

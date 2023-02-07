@@ -21,7 +21,7 @@
         </div>
         <div class="top__menu__company-user">
           <div><NuxtLink to="/user/login">Logowanie/Zarejestruj</NuxtLink></div>
-          <div class="basket-user">Koszyk<div class="basket-lenght">
+          <div class="basket-user" >Koszyk<div class="basket-lenght">
             <NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink>
           </div>
         </div>

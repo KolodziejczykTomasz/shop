@@ -1,123 +1,41 @@
 {
-  "cart": [
+  "cart": [],
+  "newsletter": [],
+  "contact": [],
+  "newUser": [
     {
-      "id": 9,
-      "title": "Świeca w słoiku",
-      "price": "40",
-      "tags": "słoik",
-      "image": "/img/product_9.jpg",
-      "quantity": 5,
-      "availability": 10,
-      "description": "Świeca w słoiku wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 2,
-      "title": "Świeca z wosku pszczelego",
-      "price": "20",
-      "tags": "wosk",
-      "image": "/img/product_2.jpg",
-      "quantity": 1,
-      "availability": 10,
-      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 3,
-      "title": "Świeca z wosku pszczelego",
-      "price": "20",
-      "tags": "wosk",
-      "image": "/img/product_3.jpg",
-      "quantity": 2,
-      "availability": 10,
-      "specials": false,
-      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 7,
-      "title": "Świeca w kształce choinki",
-      "price": "25",
-      "tags": "choinka",
-      "image": "/img/product_7.jpg",
-      "quantity": 4,
-      "availability": 10,
-      "specials": false,
-      "description": "Świeca w kształcie choinki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 1,
-      "title": "Świeca w kształcie aniołka",
-      "price": "15",
-      "tags": "aniołek",
-      "image": "/img/product_1.jpg",
-      "quantity": 1,
-      "specials": true,
-      "availability": 10,
-      "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    }
-  ],
-  "newsletter": [
-    {
-      "formNewsletterData": {
-        "email": "tk3sds"
+      "addUser": {
+        "email": "to@wp.pl",
+        "password": "wewe"
       },
       "id": 1
-    },
-    {
-      "formNewsletterData": {
-        "email": "tk3sds12"
-      },
-      "id": 2
-    },
-    {
-      "formNewsletterData": {
-        "email": "tk3sds12e"
-      },
-      "id": 3
-    },
-    {
-      "formNewsletterData": {
-        "email": "tk3sds12e12"
-      },
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "formNewsletterData": "tk3sds12e1212zx",
-      "id": 6
-    },
-    {
-      "email": "asas",
-      "id": 7
-    },
-    {
-      "email": "asas",
-      "id": 8
-    },
-    {
-      "email": "asas",
-      "id": 9
-    },
-    {
-      "email": "rtrt",
-      "id": 10
-    },
-    {
-      "email": "asasa@wp.pl",
-      "id": 11
-    },
-    {
-      "email": "zxzx@wp.pl",
-      "id": 12
-    },
-    {
-      "email": "zxzx@wp.pl",
-      "id": 13
     }
   ],
-  "contact": [],
-  "newProduct": [],
-  "users": [],
+  "newProduct": [
+    {
+      "newProduct": {
+        "id": "",
+        "title": "",
+        "price": "",
+        "tag": "",
+        "image": "",
+        "quantity": "",
+        "availability": "",
+        "specials": "",
+        "description": ""
+      },
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "loginUser": {
+        "email": "wew@wp.pl",
+        "password": "sdsd"
+      },
+      "id": 1
+    }
+  ],
   "discount": [],
   "products": [
     {
