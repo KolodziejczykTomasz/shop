@@ -96,8 +96,7 @@ export const useCartStore = defineStore("cart", {
     },
 
     async submitContactForm(contactMessage) {
-      this.contact.push({ contactMessage });
-
+      this.contact.push({ contactMessage });      
       await $fetch("http://localhost:4000/contact", {
         method: "post",
         body: JSON.stringify({ contactMessage }),

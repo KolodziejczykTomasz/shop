@@ -53,6 +53,7 @@
 
     const isPending = ref(false)
     const { data: allProducts } = await useFetch('http://localhost:4000/products'); 
+    
     const addToBasket = async () => {
         isPending.value = true
         await cartStore.addToCart(product)

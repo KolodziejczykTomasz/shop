@@ -25,7 +25,8 @@ interface newsletterEmail {
 const newsletterEmail: newsletterEmail = {email: ""};
 const addEmailToNewsletter = async () => {
     await cartStore.submitNewsletterForm(newsletterEmail.email)    
-    setTimeout(() => {       
+    setTimeout(() => {      
+       
         alert("Dziekujemy, adres email został dodany!!!");        
     }, 1000)
     }

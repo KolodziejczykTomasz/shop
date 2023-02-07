@@ -12,5 +12,6 @@
     font-family: "BloggerSansBold";
     font-size: $font-size-xl;
     background-color: $primary-color-green;
+    text-align: center;
 }
 </style>

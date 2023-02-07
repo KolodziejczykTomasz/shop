@@ -17,10 +17,10 @@
             </div>
             <div>
                 <p class="subtitle">Jak dojechać?</p>           
-                <div>
+                <div class="footer-map">
                     <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1515.990476992065!2d20.57510733731571!3d54.127336381087034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e2f5a2d6111b95%3A0x23ac2d005320a112!2sPoligraf.%20Sp%C3%B3%C5%82dzielnia%20Pracy!5e0!3m2!1spl!2spl!4v1675571525291!5m2!1spl!2spl"
-                    width="600" height="450" style="border:0;" loading="lazy"
+                    width="100%" height="450" style="border:0;" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -44,13 +44,16 @@ interface contactMessage {
     message: string
 }
 
-const contactMessage: contactMessage = { email: "", name: "", subject: "", message: "" };
-const addContactMessage = async () => {
-    await cartStore.submitContactForm(contactMessage)
-    setTimeout(() => {
-        alert("Dziekujemy, wiadmość została wysłana!!!");
+
+const addContactMessage = async () => {  
+    await cartStore.submitContactForm(contactMessage);   
+    setTimeout(() => {      
+        alert("Dziekujemy, wiadmość została wysłana!!!");  
+           
     }, 1000)
+   
 }
+ const contactMessage: contactMessage = { email: "", name: "", subject: "", message: "" };
 </script>
 
 <style lang="scss">
@@ -80,15 +83,21 @@ const addContactMessage = async () => {
         height: auto;
         grid-template-columns: 1fr 1fr;       
     }
+
+    & .footer-map {
+        padding-right: 30px;
+    }
 }
+
+
 
 .contact__form form {
     @include flex-center;
     flex-direction: column;
     & input {
         display: flex;
-        width: 500px;
-        max-width: 80%;
+        min-width: 300px;
+            width: 80%;
         height: 40px;
         margin: 15px 0;
         border-radius: 20px;
@@ -100,8 +109,8 @@ const addContactMessage = async () => {
 
     & textarea {
         display: flex;
-        width: 500px;
-        max-width: 80%;
+        min-width: 300px;
+        width: 80%;
         height: 120px;
         margin: 20px 0;
         border-radius: 20px;
@@ -132,6 +141,14 @@ const addContactMessage = async () => {
                 }
             }
         
+
+}
+
+@media only screen and (max-width: 768px) {
+#contact .contact__wrapper {        
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
 
 }
 </style>

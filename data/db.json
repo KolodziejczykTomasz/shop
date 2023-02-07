@@ -1,7 +1,115 @@
 {
-  "cart": [],
-  "newsletter": [],
-  "contact": [],
+  "cart": [
+    {
+      "id": 1,
+      "title": "Świeca w kształcie aniołka",
+      "price": "15",
+      "tags": "aniołek",
+      "image": "/img/product_1.jpg",
+      "quantity": 5,
+      "specials": true,
+      "availability": 10,
+      "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    }
+  ],
+  "newsletter": [
+    {
+      "email": "test@wp.pl",
+      "id": 1
+    }
+  ],
+  "contact": [
+    {
+      "contactMessage": {
+        "email": "q@wp.pl",
+        "name": "qwqw",
+        "subject": "q",
+        "message": "qwqwq"
+      },
+      "id": 1
+    },
+    {
+      "contactMessage": {
+        "email": "q@wp.pl",
+        "name": "qwqw",
+        "subject": "q",
+        "message": "qwqwq"
+      },
+      "id": 2
+    },
+    {
+      "contactMessage": {
+        "email": "asasas@Wp.pl",
+        "name": "qwqwqwqw",
+        "subject": "qwqwqw",
+        "message": "wqwqwqw"
+      },
+      "id": 3
+    },
+    {
+      "contactMessage": {
+        "email": "dfdf@wp.pl",
+        "name": "xcxf",
+        "subject": "dfdf",
+        "message": "dfdf"
+      },
+      "id": 4
+    },
+    {
+      "contactMessage": {
+        "email": "dfdf@wp.pl",
+        "name": "xcxf",
+        "subject": "dfdf",
+        "message": "dfdf"
+      },
+      "id": 5
+    },
+    {
+      "contactMessage": {
+        "email": "dfdf@wp.pl",
+        "name": "dfdf@wp.pl",
+        "subject": "dfdf@wp.pl",
+        "message": "dfdf@wp.pl"
+      },
+      "id": 6
+    },
+    {
+      "contactMessage": {
+        "email": "",
+        "name": "dfdf@wp.pl",
+        "subject": "dfdf@wp.pl",
+        "message": "dfdf@wp.pl"
+      },
+      "id": 7
+    },
+    {
+      "contactMessage": {
+        "email": "",
+        "name": "ontactMessage",
+        "subject": "ontactMessage",
+        "message": "ontactMessage"
+      },
+      "id": 8
+    },
+    {
+      "contactMessage": {
+        "email": "test@wp.pl",
+        "name": "test",
+        "subject": "test",
+        "message": "test"
+      },
+      "id": 9
+    },
+    {
+      "contactMessage": {
+        "email": "asas@wp.pl",
+        "name": "asas",
+        "subject": "asas",
+        "message": "asas"
+      },
+      "id": 10
+    }
+  ],
   "newUser": [
     {
       "addUser": {
