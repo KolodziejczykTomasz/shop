@@ -1,7 +1,7 @@
 <template>
 <div class="cart__product">
     <div class="cart__product-photo">
-        <img :src="product.imgUrl" :alt="product.title">
+        <img :src="`${product.image}`" :alt="`${product.title}`" />
     </div>
     <div class="cart__product-name">
         <p>{{product.title}}</p>
@@ -16,6 +16,7 @@
     const cartStore = useCartStore()
     cartStore.getCart();
     const { product } = defineProps(['product']);
+
 </script>
 <style lang="scss">
 .cart__product {
@@ -31,8 +32,7 @@
         & img {
             width: 70px;
             height: 70px;
-            object-fit: contain;
-            border: 1px solid red;
+            object-fit: contain;       
         }
     }
 

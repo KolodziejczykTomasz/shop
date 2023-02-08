@@ -5,10 +5,11 @@ export const useCartStore = defineStore("cart", {
     cart: [],
     newsletter: [],
     contact: [],
-    newProduct: [],
     users: [],
     discount: [],
-    newUser: []
+    newUser: [],
+    products: [],
+    auth: false
   }),
   getters: {
     cartTotal() {
@@ -96,19 +97,10 @@ export const useCartStore = defineStore("cart", {
     },
 
     async submitContactForm(contactMessage) {
-      this.contact.push({ contactMessage });      
+      this.contact.push({ contactMessage });
       await $fetch("http://localhost:4000/contact", {
         method: "post",
-        body: JSON.stringify({ contactMessage }),
-      });
-    },
-
-    async submitNewProductForm(newProduct) {
-      this.newProduct.push({ newProduct });
-
-      await $fetch("http://localhost:4000/newProduct", {
-        method: "post",
-        body: JSON.stringify({ loginUser }),
+        body: JSON.stringify({ ...contactMessage }),
       });
     },
 
@@ -117,16 +109,27 @@ export const useCartStore = defineStore("cart", {
 
       await $fetch("http://localhost:4000/users", {
         method: "post",
-        body: JSON.stringify({ loginUser }),
+        body: JSON.stringify({ ...loginUser }),
       });
     },
     async submitSingUpForm(addUser) {
       this.users.push({ addUser });
 
-      await $fetch("http://localhost:4000/newUser", {
+      await $fetch("http://localhost:4000/users", {
         method: "post",
-        body: JSON.stringify({ addUser }),
+        body: JSON.stringify({ ...addUser }),
       });
     },
+   async submitNewProductForm(newProduct) {
+      this.products.push({ newProduct });
+
+      await $fetch("http://localhost:4000/products", {
+        method: "post",
+        body: JSON.stringify({ ...newProduct }),
+      });
+    },
+
+
+
   },
 });

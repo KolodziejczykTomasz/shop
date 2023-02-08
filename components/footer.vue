@@ -17,13 +17,13 @@
         </div>
         <div class="footer__menu-item">
           <p class="footer__menu-title">MOJE KONTO:</p>
-          <ul class="circle-list-style-green">
-            <li><NuxtLink to="/user/user">Moje dane</NuxtLink></li>
-            <li>
-              <NuxtLink to="/products/newProduct">Dodaj produkt</NuxtLink>
-            </li>
+          <ul class="circle-list-style-green">            
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
+            <li class="hide" :class="{ show: cartStore.auth }" ><NuxtLink to="/user/user"  >Moje dane</NuxtLink></li>
+            <li class="hide" :class="{ show: cartStore.auth }" >
+              <NuxtLink to="/products/newProduct" >Dodaj produkt</NuxtLink>
+            </li>
           </ul>
           <p class="footer__menu-title">Dołącz do nas</p>
           <SocialMedia/>
@@ -70,6 +70,10 @@
   import SocialMedia from "./socialMedia.vue";
   import PromotionBar from "./promotionBar.vue";
   import Newsletter from "./newsletter.vue";
+import { useCartStore } from "~~/stores/cartStore";
+
+const cartStore = useCartStore()
+cartStore.getCart();
 </script>
 <style lang="scss">
 #footer {
@@ -77,6 +81,14 @@
   height: auto;
   width: 100%; 
   font-size: $font-size-m;
+
+  .hide {
+    visibility: hidden;   
+  
+  }
+  .show {
+    visibility: visible;
+  }
 }
 .footer__menu-address {
     list-style: none;
@@ -155,8 +167,7 @@
   list-style: none;
   margin-bottom:20px;
   & li a {
-        color: $primary-color-green;
-  
+        color: $primary-color-green;  
       &:hover {
         color: $yellow;
       }
@@ -207,7 +218,6 @@
     margin: 10px 0;
   }
 }
-
 
   .footer__menu-item:last-child {
     width: 40%;

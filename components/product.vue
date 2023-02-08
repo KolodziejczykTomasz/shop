@@ -3,7 +3,7 @@
     <div class="product"> 
     <div class="non-specials" :class="{ specials: isSpecials }" >Promocja</div> 
         <div class="product-photo" >
-          <img :src="`${imageUrl}`" :alt="`${product.title}`"/>
+          <img :src="`${product.image}`" :alt="`${product.title}`" :product="product"/>
         </div>
         <div class="product-name">{{ product.title }}</div>
         <div class="product-price">{{ product.price }} zł</div>
@@ -12,10 +12,8 @@
 </template>
 <script lang="ts" setup >
 
-
 const {product} = defineProps(['product']);
 const isSpecials = product.specials === true;
-const imageUrl = new URL(`../src${product.image}`, import.meta.url).href
 
 </script>
 <style lang="scss">

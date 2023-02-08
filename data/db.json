@@ -5,142 +5,30 @@
       "title": "Świeca w kształcie aniołka",
       "price": "15",
       "tags": "aniołek",
-      "image": "/img/product_1.jpg",
-      "quantity": 5,
+      "image": "https://photoshost.netlify.app/static/media/Numer%201.2ce4e50e167d4ff002fc.jpg",
+      "quantity": 1,
       "specials": true,
       "availability": 10,
       "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+    },
+    {
+      "id": 7,
+      "title": "Świeca w kształce choinki",
+      "price": "24",
+      "tags": "choinka",
+      "image": "https://photoshost.netlify.app/static/media/Numer%207.b07590c393c5f7dfa2f5.jpg",
+      "quantity": 1,
+      "availability": 10,
+      "specials": false,
+      "description": "Świeca w kształcie choinki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
     }
   ],
-  "newsletter": [
-    {
-      "email": "test@wp.pl",
-      "id": 1
-    }
-  ],
-  "contact": [
-    {
-      "contactMessage": {
-        "email": "q@wp.pl",
-        "name": "qwqw",
-        "subject": "q",
-        "message": "qwqwq"
-      },
-      "id": 1
-    },
-    {
-      "contactMessage": {
-        "email": "q@wp.pl",
-        "name": "qwqw",
-        "subject": "q",
-        "message": "qwqwq"
-      },
-      "id": 2
-    },
-    {
-      "contactMessage": {
-        "email": "asasas@Wp.pl",
-        "name": "qwqwqwqw",
-        "subject": "qwqwqw",
-        "message": "wqwqwqw"
-      },
-      "id": 3
-    },
-    {
-      "contactMessage": {
-        "email": "dfdf@wp.pl",
-        "name": "xcxf",
-        "subject": "dfdf",
-        "message": "dfdf"
-      },
-      "id": 4
-    },
-    {
-      "contactMessage": {
-        "email": "dfdf@wp.pl",
-        "name": "xcxf",
-        "subject": "dfdf",
-        "message": "dfdf"
-      },
-      "id": 5
-    },
-    {
-      "contactMessage": {
-        "email": "dfdf@wp.pl",
-        "name": "dfdf@wp.pl",
-        "subject": "dfdf@wp.pl",
-        "message": "dfdf@wp.pl"
-      },
-      "id": 6
-    },
-    {
-      "contactMessage": {
-        "email": "",
-        "name": "dfdf@wp.pl",
-        "subject": "dfdf@wp.pl",
-        "message": "dfdf@wp.pl"
-      },
-      "id": 7
-    },
-    {
-      "contactMessage": {
-        "email": "",
-        "name": "ontactMessage",
-        "subject": "ontactMessage",
-        "message": "ontactMessage"
-      },
-      "id": 8
-    },
-    {
-      "contactMessage": {
-        "email": "test@wp.pl",
-        "name": "test",
-        "subject": "test",
-        "message": "test"
-      },
-      "id": 9
-    },
-    {
-      "contactMessage": {
-        "email": "asas@wp.pl",
-        "name": "asas",
-        "subject": "asas",
-        "message": "asas"
-      },
-      "id": 10
-    }
-  ],
-  "newUser": [
-    {
-      "addUser": {
-        "email": "to@wp.pl",
-        "password": "wewe"
-      },
-      "id": 1
-    }
-  ],
-  "newProduct": [
-    {
-      "newProduct": {
-        "id": "",
-        "title": "",
-        "price": "",
-        "tag": "",
-        "image": "",
-        "quantity": "",
-        "availability": "",
-        "specials": "",
-        "description": ""
-      },
-      "id": 1
-    }
-  ],
+  "newsletter": [],
+  "contact": [],
   "users": [
     {
-      "loginUser": {
-        "email": "wew@wp.pl",
-        "password": "sdsd"
-      },
+      "email": "tk@tk.pl",
+      "password": "tk",
       "id": 1
     }
   ],
@@ -151,7 +39,7 @@
       "title": "Świeca w kształcie aniołka",
       "price": "15",
       "tags": "aniołek",
-      "image": "/img/product_1.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%201.2ce4e50e167d4ff002fc.jpg",
       "quantity": 1,
       "specials": true,
       "availability": 10,
@@ -162,7 +50,7 @@
       "title": "Świeca z wosku pszczelego",
       "price": "20",
       "tags": "wosk",
-      "image": "/img/product_2.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%202.d78b733ad39cc8381f93.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": true,
@@ -173,7 +61,7 @@
       "title": "Świeca z wosku pszczelego",
       "price": "20",
       "tags": "wosk",
-      "image": "/img/product_3.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%203.90295d9dfcb7ed0abd88.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -184,7 +72,7 @@
       "title": "Świeca w kształcie szyszki",
       "price": "15",
       "tags": "szyszka",
-      "image": "/img/product_4.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%204.a31ba7facb242169be1d.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -195,7 +83,7 @@
       "title": "Świeca w kształce kuli",
       "price": "18",
       "tags": "kula",
-      "image": "/img/product_5.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%205.7cd416d6e3a888137892.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -206,7 +94,7 @@
       "title": "Świeca w kształce choinki",
       "price": "23",
       "tags": "choinka",
-      "image": "/img/product_6.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%206.58d2c3c9c6259a8cde6d.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -217,7 +105,7 @@
       "title": "Świeca w kształce choinki",
       "price": "24",
       "tags": "choinka",
-      "image": "/img/product_7.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%207.b07590c393c5f7dfa2f5.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -228,7 +116,7 @@
       "title": "Świeca z wosku pszczelego",
       "price": "30",
       "tags": "choinka",
-      "image": "/img/product_8.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%208.246f57d92e13cebe154a.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,
@@ -239,7 +127,7 @@
       "title": "Świeca w słoiku",
       "price": "40",
       "tags": "słoik",
-      "image": "/img/product_9.jpg",
+      "image": "https://photoshost.netlify.app/static/media/Numer%209.8c2bcb2795c2d75c0421.jpg",
       "quantity": 1,
       "availability": 10,
       "specials": false,

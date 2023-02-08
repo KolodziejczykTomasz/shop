@@ -4,7 +4,7 @@
         <div id="product__single">
             <div class="product__single__wrapper">
                 <div class="product__photo">
-                    <img src="" :alt="`${product.title}`" />
+                    <img :src="`${product.image}`" :alt="`${product.title}`" />
                 </div>
                 <div class="product__details">
                     <p class="product__details-name">{{ product.title }}</p>
@@ -94,8 +94,7 @@
             max-height: 320px;
             max-width: 320px;
             width: 100%;
-            height: 100%;
-            border: 1px solid red;
+            height: 100%;           
         }
     }
 
