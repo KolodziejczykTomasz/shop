@@ -3,9 +3,9 @@
     <section id="login">
         <p class="title">Logowanie</p> 
         <div class="login__form">
-            <form autocomplete="off" @submit.prevent="loginUserToApp()">
-                <input type="email" name="email" v-model="loginUser.email" placeholder="Wpisz swój adres email" required />
-                <input type="password" name="password" v-model="loginUser.password" placeholder="Hasło" required />
+            <form autocomplete="off" @submit.prevent="onSubmit">
+                <input type="email" name="email" v-model="user.email" placeholder="Wpisz swój adres email"  />
+                <input type="password" name="password" v-model="user.password" placeholder="Hasło"  />
                
                 <button type="submit">Zaloguj</button>
             </form>
@@ -17,25 +17,37 @@
 <script setup lang="ts">
     import Header from "../../components/header.vue";
     import Footer from "../../components/footer.vue";
-
+    import { useStoreAuth } from "~~/stores/storeAuth";
     import { useCartStore } from "~~/stores/cartStore";
 
-    const cartStore = useCartStore()
+    const storeAuth = useStoreAuth();
+    const cartStore = useCartStore();
     cartStore.getCart();
 
-    interface loginUser {
+    interface user {
         email: string,
         password: string,
         
     }
+const user: user = { email: "", password: "" };
+const onSubmit = ()=>{
+    if(!user.email || !user.password){
+        alert("Wpisz nazwę oraz hasło użytkownika")
+    } else {
+        if (user) {
+            storeAuth.loginUser(user)
+        }
+    }
+}
 
-    const loginUser: loginUser = { email: "", password: ""};
+   /* const loginUser: loginUser = { email: "", password: ""};
     const loginUserToApp = async () => {
         await cartStore.submitLoginForm(loginUser)
         setTimeout(() => {
             alert("Logowanie udane");
         }, 1000)
     }
+    */
 </script>
 
 <style lang="scss">

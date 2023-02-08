@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.6",
+    "firebase": "^9.17.1",
     "nuxt-sass-resources-loader": "^2.0.5",
     "pinia": "^2.0.29"
   }

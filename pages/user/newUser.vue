@@ -3,10 +3,9 @@
     <section id="new-user">
         <p class="title">Rejestracja nowego użytkownika</p>
         <div class="new-user__form">
-            <form autocomplete="off" @submit.prevent="signUpUserToApp()">
-                <input type="email" name="email" v-model="addUser.email" placeholder="Wpisz swój adres email"
-                    required />
-                <input type="password" name="password" v-model="addUser.password" placeholder="Hasło" required />
+            <form autocomplete="off" @submit.prevent="onSubmit">
+                <input type="email" name="email" v-model="user.email" placeholder="Wpisz swój adres email" />
+                <input type="password" name="password" v-model="user.password" placeholder="Hasło"  />
                    
                 <button type="submit">Rejestracja</button>
             </form>
@@ -19,24 +18,39 @@
 import Header from "../../components/header.vue";
 import Footer from "../../components/footer.vue";
 
+import { useStoreAuth } from "~~/stores/storeAuth";
 import { useCartStore } from "~~/stores/cartStore";
 
+const storeAuth = useStoreAuth();
 const cartStore = useCartStore()
 cartStore.getCart();
 
-interface addUser {
+interface user {
     email: string,
     password: string,
 
 }
 
+const user: user = { email: "", password: "" };
+const onSubmit = () => {
+    if (!user.email || !user.password) {
+        alert("Wpisz nazwę oraz hasło użytkownika")
+    } else {
+        if(user) {
+            storeAuth.registerUser(user)
+        }
+    }
+}
+
+
+/**
 const addUser: addUser = { email: "", password: "" };
 const signUpUserToApp = async () => {
     await cartStore.submitSingUpForm(addUser)
     setTimeout(() => {
         alert("Użytkownik dodany");
     }, 1000)
-}
+}**/
 </script>
 
 <style lang="scss">

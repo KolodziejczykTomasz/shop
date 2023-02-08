@@ -20,10 +20,14 @@
           <ul class="circle-list-style-green">            
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
-            <li class="hide" :class="{ show: cartStore.auth }" ><NuxtLink to="/user/user"  >Moje dane</NuxtLink></li>
-            <li class="hide" :class="{ show: cartStore.auth }" >
+            <li class="hide" :class="{ show: storeAuth.auth }" ><NuxtLink to="/user/user"  >Moje dane</NuxtLink></li>
+            <li class="hide" :class="{ show: storeAuth.auth }" >
               <NuxtLink to="/products/newProduct" >Dodaj produkt</NuxtLink>
             </li>
+            <li class="hide" :class="{ show: storeAuth.auth }">
+              <button @click="storeAuth.logoutUser" class="button-logoutUser">Wyloguj z aplikacji</button>
+            </li>
+            
           </ul>
           <p class="footer__menu-title">Dołącz do nas</p>
           <SocialMedia/>
@@ -70,10 +74,10 @@
   import SocialMedia from "./socialMedia.vue";
   import PromotionBar from "./promotionBar.vue";
   import Newsletter from "./newsletter.vue";
-import { useCartStore } from "~~/stores/cartStore";
 
-const cartStore = useCartStore()
-cartStore.getCart();
+import { useStoreAuth } from "~~/stores/storeAuth";
+const storeAuth = useStoreAuth();
+
 </script>
 <style lang="scss">
 #footer {
@@ -89,11 +93,22 @@ cartStore.getCart();
   .show {
     visibility: visible;
   }
+  .button-logoutUser{
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    transition: .2s;
+    color: $primary-color-green;
+    font-weight: $bold;
+      &:hover {
+        color: $yellow;
+      }
+  }
 }
 .footer__menu-address {
     list-style: none;
     margin-bottom: 20px;
-    font-size: $font-size-m;
+    font-size: $font-size-s;
     color: $black;
     & a {
         color: $black;

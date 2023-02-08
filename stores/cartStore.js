@@ -9,7 +9,6 @@ export const useCartStore = defineStore("cart", {
     discount: [],
     newUser: [],
     products: [],
-    auth: false
   }),
   getters: {
     cartTotal() {
@@ -39,7 +38,7 @@ export const useCartStore = defineStore("cart", {
       });
     },
 
-    async incQuantity(product) {
+  async incQuantity(product) {
       let updateProduct;
 
       this.cart = this.cart.map((item) => {
