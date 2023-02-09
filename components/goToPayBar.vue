@@ -7,7 +7,7 @@
     </div>
     <div class="goToPayBar-button">
         <button>
-            <NuxtLink to="/">Przejdź do płatności</NuxtLink>
+            <NuxtLink to="/order">Podsumowanie zamówienia</NuxtLink>
         </button>
     </div>
 </section>

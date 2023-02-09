@@ -16,7 +16,7 @@
     const { product } = defineProps(['product']);
 </script>
 <style lang="scss">
-.cart__quantity-quantity {
+.cart__quantity {
     @include flex-center;
     flex-direction: column;
     width: 20%;

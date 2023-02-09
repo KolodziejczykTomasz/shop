@@ -20,11 +20,19 @@
           <SocialMedia/>
         </div>
         <div class="top__menu__company-user">
-          <div><NuxtLink to="/user/login">Logowanie/Zarejestruj</NuxtLink></div>
-          <div class="basket-user" >Koszyk<div class="basket-lenght">
+          <div>
+            <span v-show="!storeAuth.auth" class="loginMenuButton">
+              <NuxtLink to="/user/login">Logowanie/Zarejestruj</NuxtLink>
+            </span>
+            <span v-show="storeAuth.auth" class="loginMenuButton">
+              <button @click="storeAuth.logoutUser" class="button-logoutUser">Wyloguj</button>
+            </span>  
+          </div>      
+          <div class="basket-user" >Koszyk
+            <div class="basket-lenght">
             <NuxtLink to="/cart">{{ cartStore.cartTotalLength }}</NuxtLink>
-          </div>
-        </div>
+            </div>
+          </div>        
         </div>
       </div>
     </div>
@@ -41,8 +49,11 @@
 </template>
 <script lang="ts" setup>
 import SocialMedia from "./socialMedia.vue";
-import { useCartStore } from '~~/stores/cartStore'
+import { useCartStore } from '~~/stores/cartStore';
+import { useStoreAuth } from "~~/stores/storeAuth";
+const storeAuth = useStoreAuth();
 const cartStore = useCartStore()
+
 </script>
 <style lang="scss">
 #top__menu {
@@ -80,11 +91,27 @@ const cartStore = useCartStore()
 .top__menu__company-phone {
     margin-top: 30px;
     & a {
+      transition: .2s;
       color: $white;
       &:hover {
         color: $yellow;
       }
     }
+}
+
+.loginMenuButton {
+  display: block;
+  width: 100%;
+  & button {
+    background-color: transparent;
+    border:none;
+    color: $yellow;
+    font-size: 1.6rem;
+    transition: .2s;
+    &:hover {
+        color: $white;
+      }
+  }
 }
 
 .top__menu__company-info,

@@ -6,7 +6,7 @@ export const useCartStore = defineStore("cart", {
     newsletter: [],
     contact: [],
     users: [],
-    discount: [],
+    isDiscount: false,
     newUser: [],
     products: [],
   }),
@@ -22,6 +22,7 @@ export const useCartStore = defineStore("cart", {
         return total + item.quantity;
       }, 0);
     },
+
   },
   actions: {
     async getCart() {
@@ -70,7 +71,6 @@ export const useCartStore = defineStore("cart", {
         body: JSON.stringify(updateProduct),
       });
     },
-
     async addToCart(product) {
       const exists = this.cart.find((item) => item.id === product._rawValue.id);
       if (exists) {
