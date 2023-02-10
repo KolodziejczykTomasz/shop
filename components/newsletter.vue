@@ -16,7 +16,7 @@
 </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .footer__menu__newsletter {
     width: 100%;
     height: 160px;

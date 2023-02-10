@@ -5,7 +5,7 @@
 </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #cta {
     @include flex-center;
     border: 1px solid $primary-color-green;

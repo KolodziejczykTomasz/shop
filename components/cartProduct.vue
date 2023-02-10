@@ -18,7 +18,7 @@
     const { product } = defineProps(['product']);
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .cart__product {
     display: flex;
     height: 82px;
@@ -35,7 +35,6 @@
             object-fit: contain;       
         }
     }
-
 }
 
 .cart__product-name {

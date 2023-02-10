@@ -18,7 +18,7 @@ import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #about {
     font-size: $font-size-m;
     margin: 70px 20px;

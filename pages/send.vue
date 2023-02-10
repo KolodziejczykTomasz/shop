@@ -24,7 +24,7 @@ import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #send {
     @include flex-center;
     flex-direction: column;

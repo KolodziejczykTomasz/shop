@@ -24,7 +24,7 @@ cartStore.getCart()
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #basket {
   min-height: 200px;
   height: auto;

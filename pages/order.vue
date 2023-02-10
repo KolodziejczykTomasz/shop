@@ -36,13 +36,9 @@ const { data: discount } = await useFetch("http://localhost:4000/discount");
 const getDiscount = () =>{
   console.log(discount)
 }
- 
-
-
-
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #order {
   flex-direction: row;
   min-height: 200px;

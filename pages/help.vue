@@ -19,7 +19,7 @@
     import Footer from "../components/footer.vue";
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #help {
     @include flex-center;
     flex-direction: column;

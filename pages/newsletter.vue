@@ -32,7 +32,7 @@ const addEmailToNewsletter = async () => {
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #newsletter {
     @include flex-center;
     flex-direction: column;

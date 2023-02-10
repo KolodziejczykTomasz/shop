@@ -4,7 +4,7 @@ import {auth} from '@/js/firebase';
 
 export const useStoreAuth = defineStore("storeAuth", {
   state: () => ({
-    auth: false,
+    auth: true,
     user: {}
   }),
 

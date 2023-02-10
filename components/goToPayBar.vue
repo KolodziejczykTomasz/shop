@@ -13,7 +13,7 @@
 </section>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #goToPayBar {
     @include flex-center;
     justify-content: space-evenly;

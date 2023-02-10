@@ -79,7 +79,7 @@ import { useStoreAuth } from "~~/stores/storeAuth";
 const storeAuth = useStoreAuth();
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #footer {
   min-height: 300px;
   height: auto;

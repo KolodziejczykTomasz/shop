@@ -16,7 +16,7 @@ const {product} = defineProps(['product']);
 const isSpecials = product.specials === true;
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .product {
   @include flex-center;
   @include box-shadow-card;

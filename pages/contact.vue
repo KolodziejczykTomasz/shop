@@ -29,7 +29,7 @@
     </section>
     <Footer />
 </template>
-<script setup lang="ts">
+<script setup lang="ts" >
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 import { useCartStore } from "~~/stores/cartStore";
@@ -56,7 +56,7 @@ const addContactMessage = async () => {
  const contactMessage: contactMessage = { email: "", name: "", subject: "", message: "" };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #contact {
     margin: 70px auto;
 

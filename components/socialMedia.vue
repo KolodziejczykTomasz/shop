@@ -5,7 +5,7 @@
     <div><img class="icon-social-media" src="../assets/icons/instagram.png" alt="Instagram" /></div>
 </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .media-social {
     display: flex;
 }

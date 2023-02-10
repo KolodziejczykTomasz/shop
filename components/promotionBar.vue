@@ -3,7 +3,7 @@
         <p>Darmowe dostawy przy zakupach powyżej 300zł</p>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 #promotion-bar {
     @include flex-center;
     height: 70px;

@@ -63,7 +63,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #product__single {
     margin: 50px 0 10px 0;   
     height: auto;

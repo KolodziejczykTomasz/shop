@@ -55,7 +55,7 @@ const storeAuth = useStoreAuth();
 const cartStore = useCartStore()
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 #top__menu {
   display: flex;
   flex-direction: column;

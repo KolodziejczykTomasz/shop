@@ -9,13 +9,13 @@
     </div>
 </div>
 </template>
-<script setup lang="ts">
+<script setup lang="ts" >
     import { useCartStore } from "~~/stores/cartStore";
     const cartStore = useCartStore()
     cartStore.getCart();
     const { product } = defineProps(['product']);
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .cart__quantity {
     @include flex-center;
     flex-direction: column;

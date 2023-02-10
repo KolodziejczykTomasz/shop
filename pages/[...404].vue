@@ -14,7 +14,7 @@ import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #error div {
   min-height: 400px;
   @include flex-center;

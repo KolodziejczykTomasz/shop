@@ -50,7 +50,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #new-product {
     margin: 70px 20px;
 

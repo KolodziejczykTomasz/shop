@@ -6,7 +6,7 @@
     </div>
 </div>
 </template>
-<style lang="scss" >
+<style lang="scss" scoped>
 .pay-form {
     display: flex;
     padding-top: 10px;
