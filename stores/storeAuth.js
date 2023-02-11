@@ -1,29 +1,28 @@
-import {defineStore} from "pinia";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
-import {auth} from '@/js/firebase';
+import { defineStore } from "pinia";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, getAuth } from "firebase/auth";
+import { auth } from '@/js/firebase';
+
 
 export const useStoreAuth = defineStore("storeAuth", {
   state: () => ({
-    auth: true,
+    auth: false,
     user: {}
   }),
 
 
   actions: {
-    init(){
+     init(){
       onAuthStateChanged(auth, (user) => {
       if(user){
         this.user.id = user.uid;
-        this.user.email = user.email;
-        this.auth = true;           
+        this.user.email = user.email;             
       } else {
         this.user = {};
-        this.auth = false;
         }       
     
       })
-    },
-    registerUser(user) {     
+    },      
+        registerUser(user) {     
          createUserWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {
         alert("Użytkownik został dodany!");     
         const user = userCredential.user;
@@ -35,7 +34,8 @@ export const useStoreAuth = defineStore("storeAuth", {
     loginUser(user) {          
          signInWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {
         alert("Użytkownik został zalogowany!");     
-        const user = userCredential.user;
+        const user = userCredential.user
+        this.auth = true        
       }).catch((error)=> { 
         this.errorMessage = error.message;
         alert(this.errorMessage);
@@ -44,11 +44,14 @@ export const useStoreAuth = defineStore("storeAuth", {
     logoutUser() {      
         signOut(auth).then(()=>{
           alert("Wylogowano z aplikacji")
+          this.auth = false
     }).catch((error)=> {
         const errorCode = error.code;
         this.errorMessage = error.message;
         alert(this.errorMessage);
       })
     },
+    
+
   }
 })

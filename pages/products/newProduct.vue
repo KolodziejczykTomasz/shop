@@ -48,6 +48,7 @@
             alert("Dziekujemy, product został dodany!!!");
             }, 1000)
     }
+
 </script>
 
 <style lang="scss" scoped>
