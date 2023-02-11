@@ -35,7 +35,8 @@ export const useStoreAuth = defineStore("storeAuth", {
          signInWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {
         alert("Użytkownik został zalogowany!");     
         const user = userCredential.user
-        this.auth = true        
+        this.auth = true
+        navigateTo('/shop')    
       }).catch((error)=> { 
         this.errorMessage = error.message;
         alert(this.errorMessage);
@@ -45,6 +46,7 @@ export const useStoreAuth = defineStore("storeAuth", {
         signOut(auth).then(()=>{
           alert("Wylogowano z aplikacji")
           this.auth = false
+          navigateTo('/') 
     }).catch((error)=> {
         const errorCode = error.code;
         this.errorMessage = error.message;
