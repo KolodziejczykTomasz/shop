@@ -23,6 +23,10 @@
 <script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+   title: 'Regulamin sklepu',
+   meta: [{ name: 'description', content: 'Regulamin sklepu' }]
+})
 </script>
 
 <style lang="scss" scoped>

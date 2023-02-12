@@ -22,6 +22,10 @@
 <script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+    title: 'Regulamin wysyłki',
+    meta: [{ name: 'description', content: 'Regulamin wysyłki' }]
+})
 </script>
 
 <style lang="scss" scoped>

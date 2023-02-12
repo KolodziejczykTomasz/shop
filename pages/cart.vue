@@ -21,7 +21,10 @@ import CartProduct from '../components/cartProduct.vue';
 import { useCartStore } from "~~/stores/cartStore";
 const cartStore = useCartStore()
 cartStore.getCart()
-
+useHead({
+    title: 'Koszyk',
+    meta: [{ name: 'description', content: 'Zawartość koszyka' }]
+})
 </script>
 
 <style lang="scss" scoped>

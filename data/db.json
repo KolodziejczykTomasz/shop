@@ -47,6 +47,11 @@
       "email": "tk@tk.pl",
       "password": "tk",
       "id": 1
+    },
+    {
+      "email": "test7@test.pl",
+      "password": "test1234",
+      "id": 2
     }
   ],
   "products": [

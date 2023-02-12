@@ -17,6 +17,10 @@
 <script setup >
     import Header from "../components/header.vue";
     import Footer from "../components/footer.vue";
+useHead({
+    title: 'Pomoc',
+    meta: [{ name: 'description', content: 'Potrzebujesz pomocy' }]
+})
 </script>
 
 <style lang="scss" scoped>

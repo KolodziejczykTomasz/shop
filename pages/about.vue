@@ -16,6 +16,10 @@
 <script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+    title: 'O nas',
+    meta: [{ name: 'description', content: 'O nas' }]
+})
 </script>
 
 <style lang="scss" scoped>

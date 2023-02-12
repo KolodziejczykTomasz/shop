@@ -30,6 +30,10 @@ const addEmailToNewsletter = async () => {
         alert("Dziekujemy, adres email został dodany!!!");        
     }, 1000)
     }
+useHead({
+    title: 'Newsletter',
+    meta: [{ name: 'description', content: 'Zapisz się do newslettera' }]
+})
 </script>
 
 <style lang="scss" scoped>

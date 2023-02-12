@@ -49,6 +49,11 @@
             }, 1000)
     }
 
+useHead({
+    title: 'Nowy produkt',
+    meta: [{ name: 'description', content: 'Nowy produkt' }]
+})
+
 </script>
 
 <style lang="scss" scoped>

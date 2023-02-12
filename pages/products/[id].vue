@@ -61,6 +61,12 @@
             isPending.value = false
         }, 3000)
     }
+
+useHead({
+    title: 'Zobacz produkt',
+    meta: [{ name: 'description', content: 'Zobacz produkt' }]
+})
+
 </script>
 
 <style lang="scss" scoped>

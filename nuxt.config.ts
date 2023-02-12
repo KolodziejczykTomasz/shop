@@ -1,4 +1,14 @@
 export default defineNuxtConfig({
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+      title: 'Prosto z natury',
+      meta: [      
+        { name: 'description', content: 'Sklep internetowy' }
+      ],
+    }
+  },
 modules: [
     [
       '@pinia/nuxt',

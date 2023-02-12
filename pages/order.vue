@@ -36,6 +36,10 @@ const { data: discount } = await useFetch("http://localhost:4000/discount");
 const getDiscount = () =>{
   console.log(discount)
 }
+useHead({
+  title: 'Zamówienie',
+  meta: [{ name: 'description', content: 'Twoje zamówienie' }]
+})
 </script>
 
 <style lang="scss" scoped>

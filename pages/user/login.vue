@@ -48,6 +48,11 @@ const onSubmit = ()=>{
         }, 1000)
     }
     */
+useHead({
+    title: 'Panel logowanie',
+    meta: [{ name: 'description', content: 'Panel logowanie' }]
+})
+   
 </script>
 
 <style lang="scss">

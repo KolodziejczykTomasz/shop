@@ -23,9 +23,9 @@ export const useStoreAuth = defineStore("storeAuth", {
       })
     },      
         registerUser(user) {     
-         createUserWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {
-        alert("Użytkownik został dodany!");     
+         createUserWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {       
         const user = userCredential.user;
+        navigateTo('/shop');
       }).catch((error)=> {        
         this.errorMessage = error.message;
         alert(this.errorMessage);

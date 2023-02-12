@@ -54,6 +54,10 @@ const addContactMessage = async () => {
    
 }
  const contactMessage: contactMessage = { email: "", name: "", subject: "", message: "" };
+useHead({
+    title: 'Kontakt z nami',
+    meta: [{ name: 'description', content: 'Napisz do nas' }]
+})
 </script>
 
 <style lang="scss" scoped>

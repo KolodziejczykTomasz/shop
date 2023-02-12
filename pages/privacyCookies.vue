@@ -42,6 +42,10 @@
 <script setup >
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+   title: 'Polityka ciasteczek',
+   meta: [{ name: 'description', content: 'Polityka ciasteczek' }]
+})
 </script>
 
 <style lang="scss" scoped>

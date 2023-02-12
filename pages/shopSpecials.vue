@@ -18,7 +18,10 @@ const { data: products } = await useFetch('http://localhost:4000/products');
 
 const cartStore = useCartStore()
 cartStore.getCart()
-
+useHead({
+   title: 'Promocje',
+   meta: [{ name: 'description', content: 'producty w promocji' }]
+})
 </script>
 
 <style lang="scss" scoped>

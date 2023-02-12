@@ -12,6 +12,10 @@
 <script setup>
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+  title: 'Błąd 404',
+  meta: [{ name: 'description', content: 'Nie ma takiej strony' }]
+})
 </script>
 
 <style lang="scss" scoped>

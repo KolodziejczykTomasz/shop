@@ -27,8 +27,7 @@ cartStore.getCart();
 
 interface user {
     email: string,
-    password: string,
-
+    password: string  
 }
 
 const user: user = { email: "", password: "" };
@@ -38,19 +37,22 @@ const onSubmit = () => {
     } else {
         if(user) {
             storeAuth.registerUser(user)
+            signUpUserToApp()
         }
     }
 }
 
-
-/**
-const addUser: addUser = { email: "", password: "" };
 const signUpUserToApp = async () => {
-    await cartStore.submitSingUpForm(addUser)
+    await cartStore.submitSingUpForm(user)
     setTimeout(() => {
         alert("Użytkownik dodany");
     }, 1000)
-}**/
+}
+
+useHead({
+    title: 'Nowy użytkownik',
+    meta: [{ name: 'description', content: 'Nowy użytkownik' }]
+})
 </script>
 
 <style lang="scss">

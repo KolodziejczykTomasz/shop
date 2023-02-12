@@ -54,6 +54,10 @@
 <script setup >
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
+useHead({
+   title: 'Polityka prywatności',
+   meta: [{ name: 'description', content: 'Polityka prywatności' }]
+})
 </script>
 
 <style lang="scss" scoped>
