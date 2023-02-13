@@ -20,7 +20,8 @@
           <ul class="circle-list-style-green">            
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
-            <li class="hide" :class="{ show: storeAuth.auth }" ><NuxtLink to="/user/user"  >Moje dane</NuxtLink></li>
+            <li class="hide" :class="{ show: storeAuth.auth }" >
+              <NuxtLink to="/user/1">Moje dane</NuxtLink></li>
             <li class="hide" :class="{ show: storeAuth.auth }" >
               <NuxtLink to="/products/newProduct" >Dodaj produkt</NuxtLink>
             </li>
@@ -77,6 +78,9 @@
 
 import { useStoreAuth } from "~~/stores/storeAuth";
 const storeAuth = useStoreAuth();
+const { data: users } = useFetch('http://localhost:4000/users');
+
+
 
 </script>
 <style lang="scss" scoped>

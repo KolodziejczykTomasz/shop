@@ -6,54 +6,60 @@ import { auth } from '@/js/firebase';
 export const useStoreAuth = defineStore("storeAuth", {
   state: () => ({
     auth: false,
-    user: {}
+    user: {
+      
+    },
   }),
 
-
   actions: {
-     init(){
+    init() {
       onAuthStateChanged(auth, (user) => {
-      if(user){
-        this.user.id = user.uid;
-        this.user.email = user.email;             
-      } else {
-        this.user = {};
-        }       
-    
-      })
-    },      
-        registerUser(user) {     
-         createUserWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {       
-        const user = userCredential.user;
-        navigateTo('/shop');
-      }).catch((error)=> {        
-        this.errorMessage = error.message;
-        alert(this.errorMessage);
-      })
+        if (user) {
+          this.user.id = user.uid;
+          this.user.email = user.email;      
+        } else {
+          this.user = {};
+        }
+      });
     },
-    loginUser(user) {          
-         signInWithEmailAndPassword(auth, user.email, user.password).then((userCredential)=> {
-        alert("Użytkownik został zalogowany!");     
-        const user = userCredential.user
-        this.auth = true
-        navigateTo('/shop')    
-      }).catch((error)=> { 
-        this.errorMessage = error.message;
-        alert(this.errorMessage);
-      })
-    },
-    logoutUser() {      
-        signOut(auth).then(()=>{
-          alert("Wylogowano z aplikacji")
-          this.auth = false
-          navigateTo('/') 
-    }).catch((error)=> {
-        const errorCode = error.code;
-        this.errorMessage = error.message;
-        alert(this.errorMessage);
-      })
-    },
-    
 
-  }
-})
+    registerUser(user) {
+      createUserWithEmailAndPassword(auth, user.email, user.password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          navigateTo("/shop");
+        })
+        .catch((error) => {
+          this.errorMessage = error.message;
+          alert(this.errorMessage);
+        });
+    },
+    loginUser(user) {
+      signInWithEmailAndPassword(auth, user.email, user.password)
+        .then((userCredential) => {
+          alert("Użytkownik został zalogowany!");
+          const user = userCredential.user;
+          this.auth = true;         
+          navigateTo("/shop");          
+        })
+        .catch((error) => {
+          this.errorMessage = error.message;
+          alert(this.errorMessage);
+        });
+    },
+
+    logoutUser() {
+      signOut(auth)
+        .then(() => {
+          alert("Wylogowano z aplikacji");
+          this.auth = false;
+          navigateTo("/");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          this.errorMessage = error.message;
+          alert(this.errorMessage);
+        });
+    },
+  },
+});
