@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  
   app: {
     head: {
       charset: 'utf-8',
@@ -9,6 +10,7 @@ export default defineNuxtConfig({
       ],
     }
   },
+  
 modules: [
     [
       '@pinia/nuxt',
@@ -17,7 +19,9 @@ modules: [
           ['defineStore', 'definePiniaStore'],
         ],
       },
-    ],
+      
+    ]
+    
   ],
   
  css: [   

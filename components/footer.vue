@@ -21,7 +21,10 @@
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
             <li class="hide" :class="{ show: storeAuth.auth }" >
-              <NuxtLink to="/user/1">Moje dane</NuxtLink></li>
+               <NuxtLink :to="`/user/${storeAuth.userId}`"><button class="button-direct-userPage">
+             Moje dane
+              </button></NuxtLink >
+            </li>
             <li class="hide" :class="{ show: storeAuth.auth }" >
               <NuxtLink to="/products/newProduct" >Dodaj produkt</NuxtLink>
             </li>
@@ -61,7 +64,7 @@
       <div id="footer__company">
         <div id="footer__company-name">Prosto z natury Sp. z o.o.</div>
         <div id="footer__company-politics">
-          <NuxtLink to="/privacyPolicy">Polityka prywatności </NuxtLink>| <NuxtLink to="/rulesShop"> Regulamin </NuxtLink>| <NuxtLink to="/send">Zwroty</NuxtLink>  | <NuxtLink to="/send"> Dostawa</NuxtLink>
+          <NuxtLink to="/privacyPolicy">Polityka prywatności </NuxtLink> | <NuxtLink to="/rulesShop"> Regulamin </NuxtLink>| <NuxtLink to="/send">Zwroty</NuxtLink>  | <NuxtLink to="/send"> Dostawa</NuxtLink>
         </div>
       </div>
     </div>
@@ -78,7 +81,7 @@
 
 import { useStoreAuth } from "~~/stores/storeAuth";
 const storeAuth = useStoreAuth();
-const { data: users } = useFetch('http://localhost:4000/users');
+
 
 
 
@@ -105,6 +108,14 @@ const { data: users } = useFetch('http://localhost:4000/users');
     color: $primary-color-green;
     font-weight: $bold;
       &:hover {
+        color: $yellow;
+      }
+  }
+  & .button-direct-userPage {
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    &:hover {
         color: $yellow;
       }
   }

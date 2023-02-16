@@ -35,7 +35,8 @@ const onSubmit = ()=>{
         alert("Wpisz nazwę oraz hasło użytkownika")
     } else {
         if (user) {
-            storeAuth.loginUser(user)
+            storeAuth.loginUser(user); 
+            storeAuth.filterUserAuthName();       
         }
     }
 }
