@@ -36,19 +36,12 @@ const onSubmit = ()=>{
     } else {
         if (user) {
             storeAuth.loginUser(user); 
-            storeAuth.filterUserAuthName();       
+            storeAuth.filterUserAuthName(user);       
         }
     }
 }
 
-   /* const loginUser: loginUser = { email: "", password: ""};
-    const loginUserToApp = async () => {
-        await cartStore.submitLoginForm(loginUser)
-        setTimeout(() => {
-            alert("Logowanie udane");
-        }, 1000)
-    }
-    */
+
 useHead({
     title: 'Panel logowanie',
     meta: [{ name: 'description', content: 'Panel logowanie' }]

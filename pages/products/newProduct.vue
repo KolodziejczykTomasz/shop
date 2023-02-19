@@ -5,11 +5,11 @@
         <div class="new-product__form">
             <form autocomplete="off" @submit.prevent="addProduct()">
                 <input type="id" name="id" v-model="newProduct.id" placeholder="Identyfikator" />
-                <input type="test" name="title" v-model="newProduct.title" placeholder="Nazwa produktu" />
+                <input type="text" name="title" v-model="newProduct.title" placeholder="Nazwa produktu" />
                 <input type="text" name="price" v-model="newProduct.price" placeholder="Cena" />
-                <input type="test" name="tags" v-model="newProduct.tag" placeholder="Tag" />
+                <input type="text" name="tags" v-model="newProduct.tag" placeholder="Tag" />
                 <input type="text" name="image" v-model="newProduct.image" placeholder="URL" />
-                <input type="test" name="quantity" v-model="newProduct.quantity" placeholder="Ilość" />
+                <input type="text" name="quantity" v-model="newProduct.quantity" placeholder="Ilość" />
                 <input type="text" name="availability" v-model="newProduct.availability" placeholder="Dostępność" />
                 <input type="text" name="specials" v-model="newProduct.specials" placeholder="Objęty promocją?" />
                 <input type="text" name="description" v-model="newProduct.description" placeholder="Opis" />

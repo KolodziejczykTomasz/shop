@@ -8,6 +8,10 @@ export const useStoreAuth = defineStore("storeAuth", {
     auth: false,
     user: {},
     users: {},
+    usersFetch: {},
+    usersFetch2: {},
+    userToChange:{},
+    relifUserData: {},
     userId: 0
   }),
 
@@ -57,13 +61,22 @@ export const useStoreAuth = defineStore("storeAuth", {
         });
     },
 
-    async filterUserAuthName() {
+    async filterUserAuthName(user) {
       const data = await $fetch("http://localhost:4000/users");
-      this.users = data;      
-      const userIdFind = (this.users.filter((item) => item.email === this.user.email))[0].id;     
-       return this.userId = userIdFind;     
+      this.usersFetch2 = data;      
+      const userIdFind = (this.usersFetch2.filter((item) => item.email === user.email))[0].id;     
+      this.userId = userIdFind 
     },   
-  }
-});
 
-
+    async submitRefilForm(userRefil, userId){ 
+      this.relifUserData =  JSON.stringify({userRefil });
+      const data = await $fetch("http://localhost:4000/users/" + userId);
+      this.usersFetch = data;       
+      this.userToChange = {...userRefil, ...data};
+      await $fetch("http://localhost:4000/users/" + userId, {
+                    method: "put",
+                    body: JSON.stringify(this.userToChange),
+            });      
+      }
+    }
+  })

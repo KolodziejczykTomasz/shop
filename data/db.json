@@ -44,8 +44,15 @@
   "contact": [],
   "users": [
     {
+      "name": "Jan",
+      "lastName": "Nowak",
+      "city": "Lidzbark Warmiński",
+      "address": "1/1",
+      "street": "Prosta",
+      "postcode": "11-100",
+      "post": "Lidzbark Warmiński",
       "email": "tk@tk.pl",
-      "password": "tk",
+      "password": "tk1234",
       "id": 1
     },
     {

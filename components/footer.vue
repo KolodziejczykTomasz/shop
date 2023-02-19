@@ -21,7 +21,7 @@
             <li><NuxtLink to="/newsletter">Newsletter</NuxtLink></li>
             <li><NuxtLink to="/help">Pomoc</NuxtLink></li>
             <li class="hide" :class="{ show: storeAuth.auth }" >
-               <NuxtLink :to="`/user/${storeAuth.userId}`"><button class="button-direct-userPage">
+               <NuxtLink :to="`/user/${idUser}`"><button class="button-direct-userPage">
              Moje dane
               </button></NuxtLink >
             </li>
@@ -81,7 +81,7 @@
 
 import { useStoreAuth } from "~~/stores/storeAuth";
 const storeAuth = useStoreAuth();
-
+const idUser = storeAuth.userId;
 
 
 
