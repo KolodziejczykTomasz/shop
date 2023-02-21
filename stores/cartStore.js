@@ -45,12 +45,17 @@ export const useCartStore = defineStore("cart", {
       this.cart = this.cart.map((item) => {
         if (item.id === product.id && item.quantity <= item.availability) {
           item.quantity++;
+          item.availability--;
           updateProduct = item || (updateProduct = product._rawValue);
         }
         return item;
       });
 
       await $fetch("http://localhost:4000/cart/" + product.id, {
+        method: "put",
+        body: JSON.stringify(updateProduct),
+      });
+      await $fetch("http://localhost:4000/products/" + product.id, {
         method: "put",
         body: JSON.stringify(updateProduct),
       });
@@ -62,6 +67,7 @@ export const useCartStore = defineStore("cart", {
       this.cart = this.cart.map((item) => {
         if (item.id === product.id && item.quantity > 1) {
           item.quantity--;
+          item.availability++;
           updateProduct = item;
         }
         return item;
@@ -70,6 +76,11 @@ export const useCartStore = defineStore("cart", {
         method: "put",
         body: JSON.stringify(updateProduct),
       });
+await $fetch("http://localhost:4000/products/" + product.id, {
+  method: "put",
+  body: JSON.stringify(updateProduct),
+});
+
     },
     async addToCart(product) {
       const exists = this.cart.find((item) => item.id === product._rawValue.id);
