@@ -2,6 +2,11 @@
  <NuxtLink :to="`/products/${product.id}`" :product="product">  
     <div class="product"> 
     <div class="non-specials" :class="{ specials: isSpecials }" >Promocja</div> 
+    <div class="icon-edit" v-show="storeAuth.auth">
+      <NuxtLink :to="`/products/edit/${product.id}`" :product="product"> 
+      <img src="../assets/icons/edit.png" alt="Ikonka trybu edycji" />
+      </NuxtLink>
+    </div>
         <div class="product-photo" >
           <img :src="`${product.image}`" :alt="`${product.title}`" :product="product"/>
         </div>
@@ -11,6 +16,8 @@
   </NuxtLink>
 </template>
 <script lang="ts" setup >
+import { useStoreAuth } from "~~/stores/storeAuth";
+const storeAuth = useStoreAuth();
 
 const {product} = defineProps(['product']);
 const isSpecials = product.specials === true;
@@ -41,7 +48,18 @@ const isSpecials = product.specials === true;
         font-size: $font-size-xl;
         text-transform: uppercase;
         visibility: visible;
-      }      
+      }  
+      & .icon-edit {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: $gray;
+         & img {
+            height: 20px;
+            width: 20px;
+         }
+      }     
 }
 
 .product-photo {
