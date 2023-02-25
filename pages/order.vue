@@ -34,7 +34,6 @@ const discountInput: discountInput = { value: "" };
 
 const { data: discount } = await useFetch("http://localhost:4000/discount");
 const getDiscount = () =>{
-  console.log(discount)
 }
 useHead({
   title: 'Zamówienie',

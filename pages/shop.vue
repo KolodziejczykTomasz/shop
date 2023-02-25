@@ -3,11 +3,11 @@
     <div>
         <SalesBar />
         <section id="products">
-            <Product v-for="(product, index) in products" :product=product :key="index" />
+            <Product v-for="(product, index) in products" :product = product :key = index />
         </section>
     </div>
     <Footer />
-</template>
+</template> 
 <script setup>
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";

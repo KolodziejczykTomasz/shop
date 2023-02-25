@@ -108,11 +108,7 @@
     const specialsRef = ref();
     const quantityRef = ref();
 
-
-
-
     const emit = defineEmits(['update:product.description']);
-
     const props = defineProps({image: { type: String }});
     
 

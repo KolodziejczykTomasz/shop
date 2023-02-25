@@ -5,14 +5,14 @@
     <section id="products">
       <Product
         v-for="(product, index) in products.slice(0, 8)"
-        :product="product"
+        :product = product
         :key="index"
       />
     </section>
   </div>
   <Footer />
 </template>
-<script setup>
+<script setup lang="ts">
 import Header from "../components/header.vue";
 import Footer from "../components/footer.vue";
 import Product from "../components/product.vue";
@@ -24,12 +24,13 @@ const { data: products } = await useFetch("http://localhost:4000/products");
 const cartStore = useCartStore();
 cartStore.getCart();
 useHead({
-  title: 'Home',
+  title: 'Home | Prosto z natury',
   meta: [{ name: 'description', content: 'Nasze produkty.' }] 
 })
 </script>
 
 <style lang="scss" scoped>
+
 #products {
   display: grid;
   justify-content: center;

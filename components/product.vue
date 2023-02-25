@@ -1,28 +1,43 @@
-<template>
- <NuxtLink :to="`/products/${product.id}`" :product="product">  
-    <div class="product"> 
-    <div class="non-specials" :class="{ specials: isSpecials }" >Promocja</div> 
-    <div class="icon-edit" v-show="storeAuth.auth">
-      <NuxtLink :to="`/products/edit/${product.id}`" :product="product"> 
-      <img src="../assets/icons/edit.png" alt="Ikonka trybu edycji" />
-      </NuxtLink>
-    </div>
-        <div class="product-photo" >
-          <img :src="`${product.image}`" :alt="`${product.title}`" :product="product"/>
-        </div>
-        <div class="product-name">{{ product.title }}</div>
-        <div class="product-price">{{ product.price }} zł</div>
-    </div>
-  </NuxtLink>
-</template>
-<script lang="ts" setup >
-import { useStoreAuth } from "~~/stores/storeAuth";
-const storeAuth = useStoreAuth();
+ <template > 
+ <div class="product" v-show="storeAuth.auth === false" > 
+  <NuxtLink :to="`/products/${product.id}`"  >  
+           
+      <div class="non-specials" :class="{ specials: isSpecials }" >Promocja</div>      
+          <div class="product-photo" >
+            <img :src="`${product.image}`" :alt="`${product.title}`"/>
+          </div>
+          <div class="product-name">{{ product.title }}</div>
+          <div class="product-price">{{ product.price }} zł</div>
+    </NuxtLink>  
+  </div>
 
-const {product} = defineProps(['product']);
-const isSpecials = product.specials === true;
+ <div class="product" v-show="storeAuth.auth === true"> 
+    <NuxtLink :to="`/products/edit/${product.id}`" >
+           
+      <div class="non-specials" :class="{ specials: isSpecials }" >Promocja</div> 
+      <div class="icon-edit"> 
+            <img src="../assets/icons/edit.png" alt="Ikonka trybu edycji"  />         
+      </div>
+          <div class="product-photo" >
+            <img :src="`${product.image}`" :alt="`${product.title}`"/>
+          </div>
+          <div class="product-name">{{ product.title }}</div>
+          <div class="product-price">{{ product.price }} zł</div>
+    </NuxtLink>  
+  </div>   
+</template>
+
+<script lang="ts" setup >
+  import { useStoreAuth } from "~~/stores/storeAuth";
+
+  const storeAuth = useStoreAuth();
+  const {product} = defineProps(['product']);
+
+  const isAuth = storeAuth.auth === true;
+  const isSpecials = product.specials === true;
 
 </script>
+
 <style lang="scss" scoped>
 .product {
   @include flex-center;
@@ -35,32 +50,38 @@ const isSpecials = product.specials === true;
   cursor: pointer;
     &:hover {
       @include box-shadow-card-hover;
-    } & .non-specials {
-        visibility: hidden;
-      }
-      & .specials {
-        @include flex-center;
-        @include background-gradient;
-        position: absolute;
-        color: $yellow;
-        width: 100%;
-        height: 50px;
-        font-size: $font-size-xl;
-        text-transform: uppercase;
-        visibility: visible;
-      }  
-      & .icon-edit {
-        display: block;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        color: $gray;
-         & img {
-            height: 20px;
-            width: 20px;
-         }
-      }     
+    } 
+  & .non-specials {
+    visibility: hidden;
+  }
+
+  & .specials {
+    @include flex-center;
+    @include background-gradient;       
+    margin-left: -25px;
+    margin-top: 50%;
+    position: absolute;
+    color: $yellow;
+    width: 100%;
+    height: 50px;
+    font-size: $font-size-xl;
+    text-transform: uppercase;
+    visibility: visible;
+  }  
+
+  & .icon-edit {
+  display: block;
+  position: absolute;     
+  top: 5px;
+  right: 5px;
+  color: $gray;
+    & img {
+      height: 20px;
+      width: 20px;
+  }
+} 
 }
+
 
 .product-photo {
   @include flex-center;

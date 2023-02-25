@@ -6,54 +6,10 @@
       "price": "15",
       "tags": "aniołek",
       "image": "https://photoshost.netlify.app/static/media/Numer%201.2ce4e50e167d4ff002fc.jpg",
-      "quantity": 5,
-      "specials": true,
-      "availability": 6,
-      "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 7,
-      "title": "Świeca w kształce choinki",
-      "price": "24",
-      "tags": "choinka",
-      "image": "https://photoshost.netlify.app/static/media/Numer%207.b07590c393c5f7dfa2f5.jpg",
-      "quantity": 1,
-      "availability": 10,
-      "specials": false,
-      "description": "Świeca w kształcie choinki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 4,
-      "title": "Świeca w kształcie szyszki",
-      "price": "15",
-      "tags": "szyszka",
-      "image": "https://photoshost.netlify.app/static/media/Numer%204.a31ba7facb242169be1d.jpg",
-      "quantity": 1,
-      "availability": 10,
-      "specials": false,
-      "description": "Świeca w kształcie szyszki wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 8,
-      "title": "Świeca z wosku pszczelego",
-      "price": "30",
-      "tags": "choinka",
-      "image": "https://photoshost.netlify.app/static/media/Numer%208.246f57d92e13cebe154a.jpg",
-      "quantity": 1,
-      "availability": 10,
-      "specials": false,
-      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
-    },
-    {
-      "id": 3,
-      "title": "Świeca z wosku pszczelego",
-      "price": "20",
-      "tags": "wosk",
-      "image": "https://photoshost.netlify.app/static/media/Numer%203.90295d9dfcb7ed0abd88.jpg",
       "quantity": 3,
-      "availability": 8,
-      "specials": false,
-      "description": "Świeca wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
+      "specials": true,
+      "availability": 4,
+      "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
     }
   ],
   "newsletter": [],
@@ -90,9 +46,9 @@
       "price": "15",
       "tags": "aniołek",
       "image": "https://photoshost.netlify.app/static/media/Numer%201.2ce4e50e167d4ff002fc.jpg",
-      "quantity": 5,
+      "quantity": 3,
       "specials": true,
-      "availability": 6,
+      "availability": 4,
       "description": "Świeca w kształcie aniołka wykonana z naturalnego wosku pszczelego :). Świece z wosku pszczelego spalają się bezdymowo. Wydzielane z płomienia świecy ujemne jony oczyszczają powietrze oraz łagodząc dolegliwości nieżytu górnych dróg oddechowych, chorób płuc, astmy i alergii. Świece mają ok. 35g i spalają się przez 4-5h."
     },
     {

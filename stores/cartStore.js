@@ -111,6 +111,7 @@ export const useCartStore = defineStore("cart", {
 
     async submitContactForm(contactMessage) {
       this.contact.push({ contactMessage });
+
       await $fetch("http://localhost:4000/contact", {
         method: "post",
         body: JSON.stringify({ ...contactMessage }),
@@ -145,12 +146,13 @@ export const useCartStore = defineStore("cart", {
     },
 
     async submitUpdateProductForm(updateProduct) {
-          this.updateProduct.push({ updateProduct });          
-            await $fetch("http://localhost:4000/products/" + updateProduct.id, {
-              method: "put",
-              body: JSON.stringify(updateProduct),       
-            });          
-        },
+      this.updateProduct.push({ updateProduct });          
+        
+      await $fetch("http://localhost:4000/products/" + updateProduct.id, {
+        method: "post",
+        body: JSON.stringify(updateProduct),       
+      });          
+    },
 
   },
 });
