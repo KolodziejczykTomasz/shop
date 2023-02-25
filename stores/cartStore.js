@@ -9,6 +9,7 @@ export const useCartStore = defineStore("cart", {
     isDiscount: false,
     newUser: [],
     products: [],
+    updateProduct: []
   }),
   getters: {
     cartTotal() {
@@ -76,12 +77,13 @@ export const useCartStore = defineStore("cart", {
         method: "put",
         body: JSON.stringify(updateProduct),
       });
-await $fetch("http://localhost:4000/products/" + product.id, {
-  method: "put",
-  body: JSON.stringify(updateProduct),
-});
+      await $fetch("http://localhost:4000/products/" + product.id, {
+        method: "put",
+        body: JSON.stringify(updateProduct),
+      });
 
     },
+    
     async addToCart(product) {
       const exists = this.cart.find((item) => item.id === product._rawValue.id);
       if (exists) {
@@ -97,6 +99,7 @@ await $fetch("http://localhost:4000/products/" + product.id, {
         });
       }
     },
+
     async submitNewsletterForm(email) {
       this.newsletter.push({ email });
 
@@ -122,6 +125,7 @@ await $fetch("http://localhost:4000/products/" + product.id, {
         body: JSON.stringify({ ...loginUser }),
       });
     },
+
     async submitSingUpForm(addUser) {
       this.users.push({ addUser });
 
@@ -130,6 +134,7 @@ await $fetch("http://localhost:4000/products/" + product.id, {
         body: JSON.stringify({ ...addUser }),
       });
     },
+
    async submitNewProductForm(newProduct) {
       this.products.push({ newProduct });
 
@@ -139,7 +144,13 @@ await $fetch("http://localhost:4000/products/" + product.id, {
       });
     },
 
-
+    async submitUpdateProductForm(updateProduct) {
+          this.updateProduct.push({ updateProduct });          
+            await $fetch("http://localhost:4000/products/" + updateProduct.id, {
+              method: "put",
+              body: JSON.stringify(updateProduct),       
+            });          
+        },
 
   },
 });

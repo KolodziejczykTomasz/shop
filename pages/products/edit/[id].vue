@@ -7,32 +7,67 @@
                     <input 
                         type="text" 
                         name="image" 
-                        v-model="product.image"                               
+                        :value="product.image" 
+                        @input="(e) => $emit('update:product.image', e.target.value)"                                                    
                         placeholder="Adres url"
+                        ref="imageRef"
                     />   
                     <input 
                         type="text" 
                         name="title" 
-                        v-model="product.title" 
+                        :value="product.title" 
+                        @input="(e) => $emit('update:product.image', e.target.value)"  
                         placeholder="Nazwa"
+                        ref="titleRef"
                     />              
                    <input 
                         type="text" 
                         name="price" 
-                        v-model="product.price" 
+                        :value="product.price" 
+                        @input="(e) => $emit('update:product.price', e.target.value)"  
                         placeholder="Cena [zł]"
+                        ref="priceRef"
                     />               
                     <input 
                         type="text" 
                         name="availability" 
-                        v-model="product.availability"  
+                        :value="product.availability" 
+                        @input="(e) => $emit('update:product.availability', e.target.value)"   
                         placeholder="Dostępność [szt.]"
+                        ref="availabilityRef"
+                     />
+                     <input 
+                        type="text" 
+                        name="quantity" 
+                        :value="product.quantity" 
+                        @input="(e) => $emit('update:product.quantity', e.target.value)"   
+                        placeholder="Ilość [szt.]"
+                        ref="quantityRef"
+                     />
+                      <input 
+                        type="text" 
+                        name="tags" 
+                        :value="product.tags" 
+                        @input="(e) => $emit('update:product.tags', e.target.value)"   
+                        placeholder="tag"
+                        ref="tagRef"
+                     />
+                     <input 
+                        type="text" 
+                        name="specials" 
+                        :value="product.specials" 
+                        @input="(e) => $emit('update:product.specials', e.target.value)"   
+                        placeholder="Oferta specjalna"
+                        ref="specialsRef"
                      />
                     <textarea 
                         type="textarea"
                         name="description" 
-                        v-model="product.description" 
-                        placeholder="Opis">
+                        :value="product.description"
+                        @input="(e) => $emit('update:product.description', e.target.value)"  
+                        placeholder="Opis"
+                        ref="descriptionRef"
+                    >                       
                     </textarea>   
                     
                 <div class="product__edit__details-edit">               
@@ -62,25 +97,42 @@
 
     const { id } = useRoute().params
     const uri = 'http://localhost:4000/products/' + id
-    const { data: product } = await useFetch(uri, { key: "id" })
-
-interface productToChange {
-    image: string,
-    title: string,
-    price: string,
-    availability: string,
-    description: string
-}
-   const productToChange: productToChange = { image: "", title: "", price: "", availability: "", description: ""  };
+    const { data: product } = await useFetch(uri, { key: id })
 
 
-const emit = defineEmits(['update:modelValue'])
+    const imageRef = ref();
+    const priceRef = ref();
+    const availabilityRef = ref();
+    const descriptionRef = ref();
+    const tagRef = ref();
+    const specialsRef = ref();
+    const quantityRef = ref();
+
+
+
+
+    const emit = defineEmits(['update:product.description']);
+
+    const props = defineProps({image: { type: String }});
+    
 
     const hanldeEditProduct = async () => {
         isSaving.value = true
-        console.log(productToChange)
+
+        const updateProduct = {
+            id: id,
+            image: imageRef._rawValue.value,
+            price: priceRef._rawValue.value, 
+            availability: availabilityRef._rawValue.value, 
+            description: descriptionRef._rawValue.value,
+            tags: tagRef._rawValue.value,
+            specials: specialsRef._rawValue.value,
+            quantity: quantityRef._rawValue.value
+        }
+        await cartStore.submitUpdateProductForm(updateProduct)        
         setTimeout(() => {
-            isSaving.value = false
+            isSaving.value = false,
+            alert("Zmiany zostały zapisane")
         }, 3000)
     }
 
@@ -149,11 +201,14 @@ useHead({
         display: flex;
         min-width: 300px;
         width: 60%;
-        height: 120px;
+        min-height: 120px;
+        height: auto;
         margin: 20px 0;
         border-radius: 20px;
         padding-left:20px;
         padding-top:10px;
+        font-family: "BloggerSans";
+        font-weight:400;        
         &:focus {
             border: 2px solid $primary-color-green !important;
         }
